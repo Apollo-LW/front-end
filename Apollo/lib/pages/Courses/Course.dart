@@ -5,6 +5,8 @@ import 'package:Apollo/pages/general_components.dart';
 import 'package:Apollo/pages/home/home_components.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
+import 'package:Apollo/pages/Courses/classes.dart';
+
 
 class Course extends StatelessWidget {
   @override
@@ -63,7 +65,7 @@ class Course extends StatelessWidget {
           body: TabBarView(
             children: [
               Center(child: Chat()),
-              Center(child: Text("Test")),
+              Center(child: Classes()),
               Center(
                 child: Resources(),
               )

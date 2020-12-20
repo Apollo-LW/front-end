@@ -78,7 +78,7 @@ class _ResourcesState extends State<Resources> {
             ),
             key: Key(item.value),
             child: ExpansionTile(
-              initiallyExpanded: true,
+              // initiallyExpanded: true,
               expandedAlignment: Alignment.centerLeft,
               title: Row(
                 children: [
@@ -89,7 +89,7 @@ class _ResourcesState extends State<Resources> {
                   Text(item.value)
                 ],
               ),
-              
+
               children: [
                 ResourceItem(),
                 ResourceItem(),
@@ -103,9 +103,9 @@ class _ResourcesState extends State<Resources> {
     return Scaffold(
       // appBar: _appbar,
       body: ReorderableListView(
-          onReorder: _onReorder,
-          children: _listTiles,
-        ),
+        onReorder: _onReorder,
+        children: _listTiles,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         // backgroundColor: Color.red,

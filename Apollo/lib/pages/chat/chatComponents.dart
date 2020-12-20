@@ -60,7 +60,7 @@ class _MessageBoxState extends State<MessageBox> {
                               // SizedBox(
                               //   height: 8,
                               // ),
-                              Text(widget.message.text),
+                              SelectableText(widget.message.text),
                             ],
                           ))),
                     Padding(
@@ -112,7 +112,7 @@ class _MessageBoxState extends State<MessageBox> {
                               SizedBox(
                                 height: 8,
                               ),
-                              Text(widget.message.text),
+                              SelectableText(widget.message.text),
                             ],
                           ))),
                     Padding(

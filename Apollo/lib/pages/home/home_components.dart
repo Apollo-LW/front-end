@@ -6,52 +6,63 @@ import 'package:Apollo/pages/Courses/Course.dart';
 class CourseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Card(
-            elevation: 1,
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/course');
-              },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Positioned(
-                    child: AspectRatio(
-                      child: Image.asset(
-                        "assets/images/apollo.png",
-                        fit: BoxFit.cover,
-                      ),
-                      aspectRatio: 3,
-                    ),
-                  ),
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Intro to Computer Science",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
+    return Container(
+      width: 350,
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              clipBehavior: Clip.hardEdge,
+              elevation: 1,
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, '/course');
+                },
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Positioned(
+                      child: AspectRatio(
+                        child: FittedBox(
+                          fit: BoxFit.fitWidth,
+                          // clipBehavior: Clip.hardEdge,
+                          alignment: Alignment.topCenter,
+                          child: Image.asset(
+                            "assets/images/apollo.png",
+                            fit: BoxFit.cover,
                           ),
-                          Text("Section 1"),
-                        ],
+                        ),
+                        aspectRatio: 3,
                       ),
                     ),
-                  ),
-                ],
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Intro to Computer Science",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text("Section 1"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -8,25 +8,20 @@ import 'package:Apollo/pages/home/home_components.dart';
 import 'package:Apollo/pages/home/home.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 
+import 'package:Apollo/pages/profile/profile.dart';
+import 'package:Apollo/pages/archive/archive.dart';
+import 'package:Apollo/pages/admin/admin.dart';
+import 'package:Apollo/pages/browse/browse.dart';
 
-
-
-void main() => runApp(
-  MaterialApp(
-  initialRoute: '/home',
-  routes: { 
-    // '/': (context) => Loading(),
-    '/home': (context) => Home(),
-    '/chat': (context) => Chat(),
-    '/course': (context) => Course(),
-
-  },
-  
-  
-  )
-    
-  );
-
-
-
-
+void main() => runApp(MaterialApp(
+      initialRoute: '/home',
+      routes: {
+        // '/': (context) => Loading(),
+        '/home': (context) => Home(),
+        '/chat': (context) => Chat(),
+        '/course': (context) => Course(),
+        '/browse': (context) => Browse(),
+        '/profile': (context) => Profile(),
+        '/admin': (context) => Admin(),
+      },
+    ));

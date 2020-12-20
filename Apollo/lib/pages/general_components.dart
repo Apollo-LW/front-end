@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
 
+import 'package:Apollo/pages/profile/profile.dart';
+import 'package:Apollo/pages/archive/archive.dart';
+import 'package:Apollo/pages/admin/admin.dart';
+import 'package:Apollo/pages/browse/browse.dart';
+
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key key}) : super(key: key);
   @override
@@ -13,23 +18,50 @@ class NavDrawer extends StatelessWidget {
         ),
         accountName: Text("Mohammad Rimawi"),
         accountEmail: Text("Mohrimawiz@gmail.com"),
-        currentAccountPicture: CircleAvatar(
+        otherAccountsPictures: [
+CircleAvatar(
           backgroundColor: Colors.white,
-          child: Text('MR'),
-        ));
+          child: Text('LS'),
+        ),
+        CircleAvatar(
+          backgroundColor: Colors.white,
+          child: Text('MA'),
+        )
+        ],
+        currentAccountPicture: InkWell(
+                    onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/profile');
+          },
+                  child: CircleAvatar(
+                  
+          
+            backgroundColor: Colors.white,
+            child: Text('MR'),
+          ),
+        )
+        );
     final drawerItems = ListView(
       children: [
         drawerHeader,
         ListTile(
-          title: Text("Apollo 1"),
-          leading: const Icon(Icons.favorite),
+          title: Text("Profile"),
+          leading: const Icon(Icons.person),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/profile');
+          },
+        ),
+        ListTile(
+          title: Text("Archive"),
+          leading: const Icon(Icons.book),
           onTap: () {
             Navigator.pop(context);
           },
         ),
         ListTile(
-          title: Text("Apollo 2"),
-          leading: const Icon(Icons.comment),
+          title: Text("Admin"),
+          leading: const Icon(Icons.admin_panel_settings),
           onTap: () {
             Navigator.pop(context);
           },
@@ -54,8 +86,8 @@ class _NavBarState extends State<NavBar> {
     return BottomNavigationBar(
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.chat_bubble),
-          label: 'الرسائل',
+          icon: Icon(Icons.search),
+          label: 'تصفح',
           backgroundColor: Colors.red,
         ),
         BottomNavigationBarItem(
@@ -63,20 +95,22 @@ class _NavBarState extends State<NavBar> {
           label: 'الصفحة الرئيسة',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          label: 'المواد',
+          icon: Icon(Icons.chat_bubble),
+          label: 'الرسائل',
         ),
       ],
       currentIndex: selectedIndex,
       selectedItemColor: Colors.amber[800],
       onTap: (value) => {
-          setState(() {
-                  selectedIndex = value;
-          }),
-        if(value==0) Navigator.pushNamed(context, '/chat')
-        else if(value==1)Navigator.pushNamed(context, '/home')
-        else if(value==2)Navigator.pushNamed(context, '/home'),
-
+        setState(() {
+          selectedIndex = value;
+        }),
+        if (value == 0)
+          Navigator.pushNamed(context, '/browse')
+        else if (value == 1)
+          Navigator.pushReplacementNamed(context, '/home')
+        else if (value == 2)
+          Navigator.pushNamed(context, '/chat'),
         print(value),
       },
     );
