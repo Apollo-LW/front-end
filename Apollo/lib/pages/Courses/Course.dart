@@ -7,7 +7,6 @@ import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
 import 'package:Apollo/pages/Courses/classes.dart';
 
-
 class Course extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

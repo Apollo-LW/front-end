@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 
 class CourseCard extends StatelessWidget {
+  bool enrolled = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +17,8 @@ class CourseCard extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              clipBehavior: Clip.hardEdge,
+              clipBehavior: Clip.antiAlias,
+              // clipBehavior: Clip.hardEdge,
               elevation: 1,
               child: InkWell(
                 onTap: () {
@@ -25,19 +27,37 @@ class CourseCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Positioned(
-                      child: AspectRatio(
-                        child: FittedBox(
-                          fit: BoxFit.fitWidth,
-                          // clipBehavior: Clip.hardEdge,
-                          alignment: Alignment.topCenter,
-                          child: Image.asset(
-                            "assets/images/apollo.png",
-                            fit: BoxFit.cover,
+                    Stack(
+                      alignment: Alignment.topRight,
+                      children: [
+                        Positioned(
+                          child: AspectRatio(
+                            child: FittedBox(
+                              fit: BoxFit.fitWidth,
+                              alignment: Alignment.topCenter,
+                              child: Image.asset(
+                                "assets/images/apollo.png",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            aspectRatio: 3,
                           ),
                         ),
-                        aspectRatio: 3,
-                      ),
+                        if (!enrolled)
+                          Tooltip(
+                            message: "Enroll",
+                            child: FlatButton(
+                              child: Icon(Icons.add),
+                              onPressed: () {
+                                Scaffold.of(context).showSnackBar(SnackBar(
+                                  content:
+                                      Text("You enrolled at the course! 🎉"),
+                                  behavior: SnackBarBehavior.floating,
+                                ));
+                              },
+                            ),
+                          )
+                      ],
                     ),
                     Container(
                       child: Padding(

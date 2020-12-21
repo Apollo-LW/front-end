@@ -5,6 +5,7 @@ import 'package:Apollo/pages/general_components.dart';
 import 'package:Apollo/pages/home/home_components.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
+import 'package:Apollo/pages/Courses/courseList.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -25,89 +26,12 @@ class Home extends StatelessWidget {
         // color:Colors.amberAccent,
         // ),
         children: [
-          Container(
-            width: 500,
-            height: 180,
-            child: ListView(
-              // clipBehavior: ,
-              // scrollDirection: ,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                SizedBox(width: 30),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                SizedBox(width: 30),
-              ],
-            ),
-          ),
-          Container(
-            width: 500,
-            height: 180,
-            child: ListView(
-              // clipBehavior: ,
-              // scrollDirection: ,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                SizedBox(width: 30),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                SizedBox(width: 30),
-              ],
-            ),
-          ),
-          Container(
-            width: 500,
-            height: 180,
-            child: ListView(
-              // clipBehavior: ,
-              // scrollDirection: ,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                SizedBox(width: 30),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                SizedBox(width: 30),
-              ],
-            ),
-          ),
-          Container(
-            width: 350,
-            height: 180,
-            child: ListView(
-              // clipBehavior: ,
-              // scrollDirection: ,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                SizedBox(width: 30),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                CourseCard(),
-                SizedBox(width: 30),
-              ],
-            ),
-          ),
-          Container(
-            width: 350,
-            height: 180,
-            child: ListView(
-              // clipBehavior: ,
-              // scrollDirection: ,
-              scrollDirection: Axis.horizontal,
-              children: <Widget>[
-                SizedBox(width: 30),
-                CourseCard(),
-                CourseCard(),
-                SizedBox(width: 30),
-              ],
-            ),
-          ),
+         
+         CourseList(title:"Recent"),
+         CourseList(title:"Search"),
+          CourseList(title:"Hamad"),
+           CourseList(title:"Hamad"),
+          
         ],
       ),
       floatingActionButton: FloatingActionButton(
