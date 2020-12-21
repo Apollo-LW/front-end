@@ -63,7 +63,6 @@ UserInfo(
   givenName:,
   familyName:,
   imageUrl:,
-
 ) */
 
 /*
