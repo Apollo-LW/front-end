@@ -127,3 +127,62 @@ Course(
     itemName:,
     itemUrl:,
   ], */
+class Lecture {
+  String lectureId;
+  bool isPublic;
+  bool isActive;
+  String ownerId;
+  List<String> lectureVideos;
+  List<String> lectureDocuments;
+
+  Lecture({
+    this.lectureId,
+    this.isPublic,
+    this.isActive,
+    this.ownerId,
+    this.lectureVideos,
+    this.lectureDocuments,
+  });
+}
+
+class CourseInfo {
+  String courseId;
+  int isEnrolled;
+  String courseImg;
+  String courseName;
+  String courseDescription;
+
+  CourseInfo(
+      {this.courseId,
+      this.courseName,
+      this.courseImg,
+      this.courseDescription,
+      this.isEnrolled});
+}
+
+class Course extends CourseInfo {
+  bool isPublic;
+  bool isActive;
+  List<String> courseOwners;
+  List<String> courseMembers;
+  List<Lecture> courseLectures;
+  String courseType;
+  DateTime courseDateOfCreation;
+
+  Course(String courseId, int isEnrolled, String courseImg, String courseName,
+      String courseDescription,
+      {this.isActive,
+      this.isPublic,
+      this.courseOwners,
+      this.courseLectures,
+      this.courseMembers,
+      this.courseType,
+      this.courseDateOfCreation})
+      : super(
+          courseId: courseId,
+          isEnrolled: isEnrolled,
+          courseName: courseName,
+          courseDescription: courseDescription,
+          courseImg: courseImg,
+        );
+}
