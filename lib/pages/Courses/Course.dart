@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/general_components.dart';
 import 'package:Apollo/pages/home/home_components.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/Courses/resources.dart';

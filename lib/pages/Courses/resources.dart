@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:Apollo/pages/Courses/resourceItem.dart';
 
@@ -100,17 +101,9 @@ class _ResourcesState extends State<Resources> {
           ),
         )
         .toList();
-    return Scaffold(
-      // appBar: _appbar,
-      body: ReorderableListView(
-        onReorder: _onReorder,
-        children: _listTiles,
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        // backgroundColor: Color.red,
-        child: Icon(Icons.edit),
-      ),
+    return ReorderableListView(
+      onReorder: _onReorder,
+      children: _listTiles,
     );
   }
 }
