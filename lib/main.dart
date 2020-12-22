@@ -1,5 +1,6 @@
 import 'package:Apollo/components/bottom_navigation_bar_controller.dart';
 import 'package:Apollo/pages/Courses/course_tab_view_controller.dart';
+import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,6 +16,10 @@ import 'package:Apollo/pages/admin/admin.dart';
 import 'package:Apollo/pages/browse/browse.dart';
 
 void main() => runApp(MaterialApp(
+      theme: ThemeData(
+        primaryColor: AppColors.darkBlue,
+        accentColor: AppColors.darkBlue,
+      ),
 
       // initialRoute: '/home',
       home: BottomNavigationBarController(),

@@ -1,4 +1,5 @@
 import 'package:Apollo/components/navdrawer.dart';
+import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,7 +17,6 @@ class Home extends StatelessWidget {
           "أبولو",
           style: TextStyle(fontFamily: 'TheSansArabic-Bold'),
         ),
-        backgroundColor: Colors.lightBlue[900],
         centerTitle: true,
       ),
       body: ListView(

@@ -21,6 +21,7 @@ class Course extends StatelessWidget {
                 toolbarHeight: 60,
                 expandedHeight: 50,
 //  collapsedHeight: 30.0001,
+
 //                        pinned:true,
                 title: Text("Intro to computer science"),
                 automaticallyImplyLeading: true,
