@@ -14,7 +14,8 @@ import 'package:Apollo/pages/admin/admin.dart';
 import 'package:Apollo/pages/browse/browse.dart';
 
 void main() => runApp(MaterialApp(
-      initialRoute: '/home',
+      //initialRoute: '/home',
+      home:Home(),
       routes: {
         // '/': (context) => Loading(),
         '/home': (context) => Home(),
