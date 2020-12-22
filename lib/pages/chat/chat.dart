@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/general_components.dart';
+import 'file:///D:/Desktop/apollo/front-end/lib/components/navdrawer.dart';
 import 'package:Apollo/pages/chat/chatComponents.dart';
 
 class Chat extends StatefulWidget {
