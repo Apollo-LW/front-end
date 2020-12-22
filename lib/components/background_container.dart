@@ -28,35 +28,33 @@ class BackgroundContainer extends StatelessWidget {
     return Scaffold(
       appBar: appBar,
       bottomNavigationBar: bottomNavigationBar,
-      body: SafeArea(
-        child: Stack(children: [
-          imageUrl != null || assetPath != null
-              ? Container(
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: imageUrl != null
-                              ? NetworkImage(imageUrl)
-                              : AssetImage(assetPath),
-                          fit: BoxFit.cover,
-                          alignment: Alignment.topCenter)),
-                  child: blurredBackground == true
-                      ? BackdropFilter(
-                          filter:
-                              new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                          child: new Container(
-                            decoration: new BoxDecoration(
-                                color: Colors.white.withOpacity(0.0)),
-                          ))
-                      : SizedBox(),
-                )
-              : SizedBox(),
-          linearGradient == null ? SizedBox() : linearGradient,
-          this.child,
-        ]),
-      ),
+      body: Stack(children: [
+        imageUrl != null || assetPath != null
+            ? Container(
+                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: imageUrl != null
+                            ? NetworkImage(imageUrl)
+                            : AssetImage(assetPath),
+                        fit: BoxFit.cover,
+                        alignment: Alignment.topCenter)),
+                child: blurredBackground == true
+                    ? BackdropFilter(
+                        filter:
+                            new ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                        child: new Container(
+                          decoration: new BoxDecoration(
+                              color: Colors.white.withOpacity(0.0)),
+                        ))
+                    : SizedBox(),
+              )
+            : SizedBox(),
+        linearGradient == null ? SizedBox() : linearGradient,
+        this.child,
+      ]),
     );
   }
 }
