@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart';
 
 class BottomNavigation extends StatefulWidget {
   BottomNavigation({this.currentIndex = 1, this.setCurrentIndex});
@@ -35,7 +36,13 @@ class _BottomNavigationState extends State<BottomNavigation> {
             label: 'الصفحة الرئيسة',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble),
+            icon: Badge(
+              child: Icon(Icons.chat_bubble),
+              badgeContent: Text(
+                "5",
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
             label: 'الرسائل',
           ),
         ],
