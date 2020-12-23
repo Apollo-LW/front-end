@@ -30,8 +30,7 @@ class Institution extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            
-            Text(
+            title: Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed porttitor turpis. Donec ornare dui lacus, vitae iaculis dolor ultrices nec. Sed ipsum ipsum, dapibus non gravida sed, aliquam quis eros. Cras eleifend eros consequat ultrices imperdiet. Nulla facilisi. Integer ac quam et leo dictum vehicula vitae sed dui. Etiam mollis turpis quis nibh hendrerit"),
           ),
           CourseList(title: "Recent"),
