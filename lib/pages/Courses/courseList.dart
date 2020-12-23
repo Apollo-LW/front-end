@@ -27,7 +27,7 @@ class CourseList extends StatelessWidget {
         ),
         Container(
           width: 500,
-          height: 180,
+          height: 230,
           child: ListView(
             // clipBehavior: ,
             // scrollDirection: ,

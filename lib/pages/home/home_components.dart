@@ -5,6 +5,9 @@ import 'package:Apollo/pages/Courses/Course.dart';
 
 class CourseCard extends StatelessWidget {
   bool enrolled = false;
+
+  String description =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed porttitor turpis. Donec ornare dui lacus, vitae iaculis dolor ultrices nec. Sed ipsum ipsum, dapibus non gravida sed, aliquam quis eros. Cras eleifend eros consequat ultrices imperdiet. Nulla facilisi. Integer ac quam et leo dictum vehicula vitae sed dui. Etiam mollis turpis quis nibh hendrerit";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,7 +64,7 @@ class CourseCard extends StatelessWidget {
                     ),
                     Container(
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(12.0),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -72,7 +75,15 @@ class CourseCard extends StatelessWidget {
                                 fontSize: 18,
                               ),
                             ),
-                            Text("Section 1"),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(description.substring(
+                                    0,
+                                    description.length > 230
+                                        ? 230
+                                        : description.length) +
+                                "..."),
                           ],
                         ),
                       ),

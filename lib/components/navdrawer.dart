@@ -6,6 +6,9 @@ import 'package:Apollo/pages/profile/profile.dart';
 import 'package:Apollo/pages/archive/archive.dart';
 import 'package:Apollo/pages/admin/admin.dart';
 import 'package:Apollo/pages/browse/browse.dart';
+import 'package:Apollo/pages/archive/archive.dart';
+
+import 'package:Apollo/views/institution.dart';
 
 class NavDrawer extends StatelessWidget {
   const NavDrawer({Key key}) : super(key: key);
@@ -54,6 +57,11 @@ class NavDrawer extends StatelessWidget {
           leading: const Icon(Icons.book),
           onTap: () {
             Navigator.pop(context);
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Archive()),
+            );
           },
         ),
         ExpansionTile(
@@ -69,6 +77,10 @@ class NavDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Institution()),
+                  );
                 },
               ),
               ListTile(
@@ -79,6 +91,10 @@ class NavDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Institution()),
+                  );
                 },
               ),
               ListTile(
@@ -89,6 +105,10 @@ class NavDrawer extends StatelessWidget {
                 ),
                 onTap: () {
                   Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Institution()),
+                  );
                 },
               ),
             ]),

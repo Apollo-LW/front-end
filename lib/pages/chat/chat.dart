@@ -54,10 +54,10 @@ class _ChatState extends State<Chat> {
         time: "12:36pm"),
   ];
 
-  bool appBar = false;
+  bool appBar = true;
   @override
   Widget build(BuildContext context) {
-    if (appBar)
+    if (!appBar)
       return Scaffold(
         body: Padding(
           padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -98,12 +98,6 @@ class _ChatState extends State<Chat> {
                                 userID: '124'));
                             messageBoxController.text = "";
                           });
-                          // build(context,);
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          // if (_formKey.currentState.validate()) {
-                          // Process data.
-                          // }
                         },
                         child: Icon(Icons.send),
                       ),
