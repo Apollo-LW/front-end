@@ -24,15 +24,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_gallery: ^2.4.0+20400
-  flutter_localizations: # Add this line
-    sdk: flutter # Add this line
   badges: ^1.1.6
   flutter_speed_dial: ^1.2.5
+  url_launcher: ^5.7.10
+  chewie: ^0.12.0
+  flutter_animation_progress_bar: ^1.0.6
+
+
+
+
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.3
+  cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:

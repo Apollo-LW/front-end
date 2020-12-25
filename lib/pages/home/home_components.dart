@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 
