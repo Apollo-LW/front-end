@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gallery/l10n/gallery_localizations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 import 'package:Apollo/pages/home/home_components.dart';
@@ -145,22 +144,7 @@ class Lecture {
   });
 }
 
-class CourseInfo {
-  String courseId;
-  int isEnrolled;
-  String courseImg;
-  String courseName;
-  String courseDescription;
-
-  CourseInfo(
-      {this.courseId,
-      this.courseName,
-      this.courseImg,
-      this.courseDescription,
-      this.isEnrolled});
-}
-
-class Course extends CourseInfo {
+class Course {
   bool isPublic;
   bool isActive;
   List<String> courseOwners;
@@ -168,21 +152,23 @@ class Course extends CourseInfo {
   List<Lecture> courseLectures;
   String courseType;
   DateTime courseDateOfCreation;
+  String courseId;
+  int isEnrolled;
+  String courseImg;
+  String courseName;
+  String courseDescription;
 
-  Course(String courseId, int isEnrolled, String courseImg, String courseName,
-      String courseDescription,
+  Course(
       {this.isActive,
       this.isPublic,
       this.courseOwners,
       this.courseLectures,
       this.courseMembers,
       this.courseType,
-      this.courseDateOfCreation})
-      : super(
-          courseId: courseId,
-          isEnrolled: isEnrolled,
-          courseName: courseName,
-          courseDescription: courseDescription,
-          courseImg: courseImg,
-        );
+      this.courseDateOfCreation,
+      this.courseId,
+      this.courseName,
+      this.courseImg,
+      this.courseDescription,
+      this.isEnrolled});
 }

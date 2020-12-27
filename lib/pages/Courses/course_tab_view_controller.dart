@@ -1,5 +1,5 @@
-import 'package:Apollo/pages/Courses/classes.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
+import 'package:Apollo/pages/Courses/views/classes.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 import 'package:flutter/material.dart';
 
