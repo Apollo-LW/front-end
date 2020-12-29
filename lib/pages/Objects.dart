@@ -144,31 +144,4 @@ class Lecture {
   });
 }
 
-class Course {
-  bool isPublic;
-  bool isActive;
-  List<String> courseOwners;
-  List<String> courseMembers;
-  List<Lecture> courseLectures;
-  String courseType;
-  DateTime courseDateOfCreation;
-  String courseId;
-  int isEnrolled;
-  String courseImg;
-  String courseName;
-  String courseDescription;
 
-  Course(
-      {this.isActive,
-      this.isPublic,
-      this.courseOwners,
-      this.courseLectures,
-      this.courseMembers,
-      this.courseType,
-      this.courseDateOfCreation,
-      this.courseId,
-      this.courseName,
-      this.courseImg,
-      this.courseDescription,
-      this.isEnrolled});
-}
