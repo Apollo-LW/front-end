@@ -1,9 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/Courses/Course.dart';
-import 'package:Apollo/pages/home/home_components.dart';
-import 'package:Apollo/pages/home/home.dart';
-import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/chat/chatComponents.dart';
 
 List<Message> messages = [
@@ -126,49 +120,3 @@ Course(
     itemName:,
     itemUrl:,
   ], */
-class Lecture {
-  String lectureId;
-  bool isPublic;
-  bool isActive;
-  String ownerId;
-  List<String> lectureVideos;
-  List<String> lectureDocuments;
-
-  Lecture({
-    this.lectureId,
-    this.isPublic,
-    this.isActive,
-    this.ownerId,
-    this.lectureVideos,
-    this.lectureDocuments,
-  });
-}
-
-class Course {
-  bool isPublic;
-  bool isActive;
-  List<String> courseOwners;
-  List<String> courseMembers;
-  List<Lecture> courseLectures;
-  String courseType;
-  DateTime courseDateOfCreation;
-  String courseId;
-  int isEnrolled;
-  String courseImg;
-  String courseName;
-  String courseDescription;
-
-  Course(
-      {this.isActive,
-      this.isPublic,
-      this.courseOwners,
-      this.courseLectures,
-      this.courseMembers,
-      this.courseType,
-      this.courseDateOfCreation,
-      this.courseId,
-      this.courseName,
-      this.courseImg,
-      this.courseDescription,
-      this.isEnrolled});
-}

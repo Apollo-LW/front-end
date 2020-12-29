@@ -1,15 +1,16 @@
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/views/article_page.dart';
-import 'package:Apollo/pages/Courses/views/question_page.dart';
 import 'package:Apollo/pages/Courses/views/start_quiz_page.dart';
 import 'package:Apollo/pages/Courses/views/video_page.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/material.dart';
 
 class ChapterCard extends StatelessWidget {
+  //TODO: Update to fit the chapter model and remove the items
   final Chapter chapter;
 
   const ChapterCard({@required this.chapter});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,7 +21,7 @@ class ChapterCard extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0, left: 16),
-            child: Text(chapter.title),
+            child: Text(chapter.chapterName),
           ),
           Card(
             elevation: 1,
