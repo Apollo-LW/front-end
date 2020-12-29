@@ -1,3 +1,4 @@
+import 'package:Apollo/pages/admin/onboarding/step.dart';
 import 'package:Apollo/pages/admin/onboarding/step_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -136,7 +137,7 @@ class NavDrawer extends StatelessWidget {
         ),
         Divider(),
         ListTile(
-          title: Text("Make a course"),
+          title: Text("إنشاء دورة جديدة"),
           leading: const Icon(Icons.school),
           onTap: () {
             Navigator.push(

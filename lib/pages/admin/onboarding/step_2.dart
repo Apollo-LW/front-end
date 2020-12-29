@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
-import 'package:Apollo/pages/admin/onboarding/step_2.dart';
+import 'package:Apollo/pages/admin/onboarding/step_3.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,19 +10,62 @@ import 'package:flutter/painting.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-class Step1 extends StatefulWidget {
+class Step2 extends StatefulWidget {
+  final String title;
+
+  const Step2({@required this.title});
+
   @override
-  _Step1State createState() => _Step1State();
+  _Step2State createState() => _Step2State();
 }
 
-class _Step1State extends State<Step1> {
+class _Step2State extends State<Step2> {
   TextEditingController textEditingController = TextEditingController();
+  String selectedCategory = categories[0];
+
+  static List<String> categories = [
+    "اختار فئة",
+    "علم الروبوتات",
+    "الفيزياء",
+    "الرياضيات",
+  ];
+
+  List<DropdownMenuItem<String>> buildDropdownMenuItems() {
+    List<DropdownMenuItem<String>> items = List();
+
+    for (String category in categories) {
+      items.add(
+        DropdownMenuItem(
+          value: category,
+          child: Text(category),
+        ),
+      );
+    }
+    return items;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("إنشاء دورة جديدة"),
+        actions: [
+          TextButton(
+            child: Text(
+              "إنهاء",
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("إنشاء دورة جديدة"),
+          ],
+        ),
+        leading: Container(),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -32,7 +75,7 @@ class _Step1State extends State<Step1> {
             Transform.rotate(
               angle: pi,
               child: FAProgressBar(
-                currentValue: 1,
+                currentValue: 2,
                 maxValue: 4,
                 direction: Axis.horizontal,
                 verticalDirection: VerticalDirection.up,
@@ -44,7 +87,7 @@ class _Step1State extends State<Step1> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 8),
               child: Text(
-                "خطوة 1 من 4",
+                "خطوة 2 من 4",
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -55,16 +98,26 @@ class _Step1State extends State<Step1> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
-                    child: Text("ما هو عنوان هذه الدورة؟",
+                    child: Text("ما هي فئة الدورة؟",
                         style: TextStyle(fontSize: 24))),
                 SizedBox(
                   height: 20,
                 ),
-                TextField(
-                  decoration:
-                      InputDecoration(hintText: "مثلا: مقدمة في علوم الحاسوب"),
-                  controller: textEditingController,
-                  maxLength: 60,
+                ButtonTheme(
+                  alignedDropdown: true,
+                  child: DropdownButton(
+                    focusColor: AppColors.darkBlue,
+                    isExpanded: true,
+                    hint: Text("sdf"),
+                    value: selectedCategory,
+                    items: buildDropdownMenuItems(),
+                    onChanged: (val) {
+                      setState(() {
+                        selectedCategory = val;
+                      });
+                      print(val);
+                    },
+                  ),
                 ),
               ],
             ),
@@ -79,17 +132,17 @@ class _Step1State extends State<Step1> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-                    print(textEditingController.text);
-                    if (textEditingController.text == "")
+                    if (selectedCategory == categories[0]) {
                       Alert(
                         context: context,
-                        title: "يجب عليك إدخال عنوان.",
+                        title: "يجب عليك إختيار فئة.",
                       ).show();
-                    else {
+                    } else {
                       Navigator.pushReplacement(context, MaterialPageRoute(
                         builder: (context) {
-                          return Step2(
-                            title: textEditingController.text,
+                          return Step3(
+                            title: widget.title,
+                            category: selectedCategory,
                           );
                         },
                       ));
