@@ -2,27 +2,27 @@ import 'dart:math';
 
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
-import 'package:Apollo/pages/admin/onboarding/step_2.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
 
-class Step1 extends StatefulWidget {
+class UnusedStep extends StatefulWidget {
   @override
-  _Step1State createState() => _Step1State();
+  _UnusedStepState createState() => _UnusedStepState();
 }
 
-class _Step1State extends State<Step1> {
-  TextEditingController textEditingController = TextEditingController();
+class _UnusedStepState extends State<UnusedStep> {
+  bool institutionCardIsChosen = false;
+
+  bool notInstitutionCardIsChosen = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("إنشاء دورة جديدة"),
+        title: Text("Make a course"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -49,22 +49,38 @@ class _Step1State extends State<Step1> {
               ),
             ),
             SizedBox(
-              height: 70,
+              height: 50,
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Center(
+                child: Text("هل تتبع هذه الدورة جهة معينة؟",
+                    style: TextStyle(fontSize: 24))),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Center(
-                    child: Text("ما هو عنوان هذه الدورة؟",
-                        style: TextStyle(fontSize: 24))),
-                SizedBox(
-                  height: 20,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      institutionCardIsChosen = true;
+                      notInstitutionCardIsChosen = false;
+                    });
+                  },
+                  child: IconCard(
+                    isChosen: institutionCardIsChosen,
+                  ),
                 ),
-                TextField(
-                  decoration:
-                      InputDecoration(hintText: "مثلا: مقدمة في علوم الحاسوب"),
-                  controller: textEditingController,
-                  maxLength: 60,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      institutionCardIsChosen = false;
+                      notInstitutionCardIsChosen = true;
+                    });
+                  },
+                  child: NotInstitutionCard(
+                    isChosen: notInstitutionCardIsChosen,
+                  ),
                 ),
               ],
             ),
@@ -78,23 +94,7 @@ class _Step1State extends State<Step1> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: () {
-                    print(textEditingController.text);
-                    if (textEditingController.text == "")
-                      Alert(
-                        context: context,
-                        title: "يجب عليك إدخال عنوان.",
-                      ).show();
-                    else {
-                      Navigator.pushReplacement(context, MaterialPageRoute(
-                        builder: (context) {
-                          return Step2(
-                            title: textEditingController.text,
-                          );
-                        },
-                      ));
-                    }
-                  },
+                  onPressed: () {},
                   child: Text("التالي"),
                 ),
               ),

@@ -14,13 +14,24 @@ import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/profile/profile.dart';
 import 'package:Apollo/pages/admin/admin.dart';
 import 'package:Apollo/pages/browse/browse.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(Align(
       alignment: Alignment.topRight,
       child: Directionality(
-        textDirection: TextDirection.rtl, // set it to rtl
+        textDirection: TextDirection.rtl, //
+        // set it to rtl
 
         child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: [
+            GlobalCupertinoLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+          ],
+          supportedLocales: [
+            Locale("ar"),
+          ],
           locale: Locale("ar"),
           theme: ThemeData(
             primaryColor: AppColors.darkBlue,
