@@ -1,4 +1,5 @@
 import 'package:Apollo/pages/Courses/components/chapter_card.dart';
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/Courses/models/question.dart';
 
@@ -15,7 +16,7 @@ import 'package:flutter/material.dart';
 import 'create_lecture.dart';
 
 class Curriculum extends StatefulWidget {
-  final Course course;
+  final CourseResponse course;
   Curriculum({this.course});
 
   @override
@@ -25,23 +26,23 @@ class Curriculum extends StatefulWidget {
 class _CurriculumState extends State<Curriculum> {
   @override
   Widget build(BuildContext context) {
-    return widget.course.chapters != null
+    return widget.course.courseChapters != null
         ? ListView.builder(
             itemBuilder: (context, index) {
               return InstructorChapterCard(
-                chapter: widget.course.chapters[index],
+                chapter: widget.course.courseChapters[index],
                 addLecture: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => CreateLecture(
-                              chapter: widget.course.chapters[index],
+                              chapter: widget.course.courseChapters[index],
                             )),
                   );
                 },
               );
             },
-            itemCount: widget.course.chapters.length,
+            itemCount: widget.course.courseChapters.length,
           )
         : SizedBox();
   }

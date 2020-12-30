@@ -1,4 +1,5 @@
 import 'package:Apollo/components/navdrawer.dart';
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/Courses/views/classes.dart';
@@ -11,7 +12,7 @@ import 'package:Apollo/pages/Courses/resources.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 class TeacherCourseView extends StatefulWidget {
-  final Course course;
+  final CourseResponse course;
   TeacherCourseView({@required this.course});
 
   @override
@@ -27,7 +28,6 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
   void initState() {
     super.initState();
     _tabController = new TabController(length: buildTabs().length, vsync: this);
-    if (widget.course.chapters == null) widget.course.chapters = [];
   }
 
   @override
@@ -57,7 +57,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
 //  collapsedHeight: 30.0001,
 
 //                        pinned:true,
-              title: Text(widget.course.title),
+              title: Text(widget.course.courseName),
               automaticallyImplyLeading: true,
               bottom: TabBar(
                 controller: _tabController,
@@ -95,7 +95,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
       Center(child: Chat())
     ];
 
-    if (widget.course.isPublished) {
+    if (widget.course.isActive) {
       tabs.add(
         Center(child: Chat()),
       );
@@ -129,7 +129,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
       ),
     ];
 
-    if (widget.course.isPublished) {
+    if (widget.course.isActive) {
       tabs.add(
         Container(
           child: Tab(
@@ -178,7 +178,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
                         ),
                         onPressed: () {
                           setState(() {
-                            widget.course.chapters.add(Chapter(
+                            widget.course.courseChapters.add(Chapter(
                               chapterName: chapterTextEditingController.text,
                             ));
                           });

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
@@ -126,13 +127,16 @@ class _Step3State extends State<Step3> {
     );
   }
 
-  Course creationOfCourse() {
+  CourseResponse creationOfCourse() {
     var uuid = Uuid().v4;
-    Course course = Course(
-        title: widget.title,
+    CourseResponse course = CourseResponse(
+        courseName: widget.title,
         description: textEditingController.text,
         category: widget.category,
-        instructors: ["logged in username"],
+        courseOwners: ["logged in username"],
+        courseChapters: [],
+        isPublic: false,
+        isActive: false,
         courseId: uuid.toString());
     return course;
   }
