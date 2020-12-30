@@ -1,12 +1,8 @@
-import 'package:Apollo/components/navdrawer.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
-import 'package:Apollo/pages/Courses/models/chapter.dart';
-import 'package:Apollo/pages/Courses/models/course.dart';
-import 'package:Apollo/pages/Courses/views/classes.dart';
 import 'package:Apollo/pages/admin/views/curriculum.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/home/home_components.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';

@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
-import 'package:Apollo/pages/Courses/models/course.dart';
+import 'package:Apollo/pages/Courses/models/article.dart';
+import 'package:Apollo/pages/Courses/models/quiz.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
 import 'package:Apollo/pages/admin/onboarding/step_2.dart';
@@ -134,9 +136,13 @@ class _Step3State extends State<Step3> {
         description: textEditingController.text,
         category: widget.category,
         courseOwners: ["logged in username"],
-        courseChapters: [],
         isPublic: false,
         isActive: false,
+        courseChapters: [
+          Chapter(
+              chapterName: "ds",
+              items: [Article(title: "بسيو يس", text: "fsdf", resources: [])])
+        ],
         courseId: uuid.toString());
     return course;
   }

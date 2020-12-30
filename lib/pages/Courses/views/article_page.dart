@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../models/article.dart';
 
 class ArticlePage extends StatelessWidget {
-  Article article;
+  final Article article;
+
   ArticlePage({this.article});
 
   @override
