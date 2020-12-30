@@ -1,10 +1,9 @@
 import 'package:Apollo/components/navdrawer.dart';
-import 'package:Apollo/pages/Courses/views/classes.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/home/home_components.dart';
-import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
+import 'package:Apollo/pages/Courses/views/classes.dart';
+import 'package:Apollo/pages/chat/chat.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Course extends StatelessWidget {
   @override
