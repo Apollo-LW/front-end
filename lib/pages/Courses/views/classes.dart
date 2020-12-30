@@ -1,14 +1,13 @@
-import 'package:Apollo/pages/Courses/models/question.dart';
-
-import '../components/chapter_card.dart';
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
+import 'package:Apollo/pages/Courses/models/question.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';
 import 'package:Apollo/pages/Courses/models/video.dart';
-import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/material.dart';
+
+import '../components/chapter_card.dart';
 
 class Classes extends StatelessWidget {
   static Resource resource1 = Resource(
@@ -27,7 +26,7 @@ class Classes extends StatelessWidget {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur leo lacus, a iaculis magna mollis eget. Phasellus molestie congue mauris sed auctor. Proin commodo ante quis tellus aliquet, quis consequat nulla rutrum. Nam sed erat non felis consequat blandit vitae et est. Sed sed odio vitae tortor elementum semper. In id viverra tortor, a ultricies ante. Pellentesque convallis mauris in nisl laoreet elementum vitae sed odio. Vestibulum consequat purus quis lacus vehicula, ut ultrices magna ullamcorper. Vestibulum nisi ipsum, condimentum lobortis nibh vitae, malesuada mollis nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer pharetra, nisl eu lobortis tincidunt, risus ante euismod massa, vel consectetur nunc neque venenatis nibh. Proin convallis condimentum blandit. Praesent sagittis elit eget eros laoreet facilisis. Pellentesque auctor tempor nisl nec lacinia.",
       itemNumber: 3,
       resources: [resource2, resource2, resource2]);
-  Chapter chapter1 = Chapter(title: "Chapter 1- intro", items: [
+  Chapter chapter1 = Chapter(chapterName: "Chapter 1- intro", items: [
     Video(
         title: "Intro To hiuhiuh",
         resources: [resource2, resource2, resource2],
@@ -59,7 +58,7 @@ class Classes extends StatelessWidget {
     return ListView(
       children: [
         ChapterCard(chapter: chapter1),
-        ChapterCard(chapter: chapter1)
+        ChapterCard(chapter: chapter1),
       ],
     );
   }

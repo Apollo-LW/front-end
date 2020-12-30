@@ -1,9 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/Courses/Course.dart';
-import 'package:Apollo/pages/home/home_components.dart';
-import 'package:Apollo/pages/home/home.dart';
-import 'package:Apollo/pages/chat/chat.dart';
 import 'package:Apollo/pages/chat/chatComponents.dart';
 
 List<Message> messages = [
@@ -126,6 +120,7 @@ Course(
     itemName:,
     itemUrl:,
   ], */
+
 class Lecture {
   String lectureId;
   bool isPublic;
@@ -143,5 +138,8 @@ class Lecture {
     this.lectureDocuments,
   });
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d1338acb51a84032b01436c185e9dd24554575d1

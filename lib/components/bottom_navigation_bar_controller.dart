@@ -1,12 +1,8 @@
 import 'package:Apollo/components/background_container.dart';
-import 'package:Apollo/pages/Courses/Course.dart';
-import 'package:Apollo/pages/Courses/course_tab_view_controller.dart';
 import 'package:Apollo/pages/browse/browse.dart';
-import 'package:Apollo/pages/chat/chat.dart';
+import 'package:Apollo/pages/chat/Chats.dart';
 import 'package:Apollo/pages/home/home.dart';
-import 'package:Apollo/views/placeholder.dart';
 import 'package:flutter/material.dart';
-import 'package:Apollo/pages/chat/chats.dart';
 
 import 'bottom_navigation.dart';
 

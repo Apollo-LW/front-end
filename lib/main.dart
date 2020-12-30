@@ -1,19 +1,16 @@
 import 'package:Apollo/components/bottom_navigation_bar_controller.dart';
-import 'package:Apollo/pages/Courses/models/question.dart';
-import 'package:Apollo/pages/Courses/models/quiz.dart';
-import 'package:Apollo/pages/Courses/views/question_page.dart';
-import 'package:Apollo/pages/Courses/views/start_quiz_page.dart';
-import 'package:Apollo/theme/AppColors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
-
-import 'package:Apollo/pages/home/home.dart';
-import 'package:Apollo/pages/chat/chat.dart';
-
-import 'package:Apollo/pages/profile/profile.dart';
 import 'package:Apollo/pages/admin/admin.dart';
 import 'package:Apollo/pages/browse/browse.dart';
+<<<<<<< HEAD
+=======
+import 'package:Apollo/pages/chat/chat.dart';
+import 'package:Apollo/pages/home/home.dart';
+import 'package:Apollo/pages/profile/profile.dart';
+import 'package:Apollo/theme/AppColors.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+>>>>>>> d1338acb51a84032b01436c185e9dd24554575d1
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(Align(
@@ -49,7 +46,7 @@ void main() => runApp(Align(
 
             '/chat': (context) => Chat(),
 
-            '/course': (context) => Course(),
+            '/course': (context) => CourseView(),
 
             '/browse': (context) => Browse(),
 
@@ -61,3 +58,4 @@ void main() => runApp(Align(
       ),
     ));
 //helloo
+//hiii

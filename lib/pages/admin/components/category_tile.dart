@@ -44,8 +44,13 @@ class _CategoryTileState extends State<CategoryTile> {
           ),
         ],
       ),
+<<<<<<< HEAD
       height: 200,
       width: MediaQuery.of(context).size.width / 2 - 45,
+=======
+      height: 150,
+      width: MediaQuery.of(context).size.width - 80,
+>>>>>>> d1338acb51a84032b01436c185e9dd24554575d1
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
         boxShadow: [
