@@ -1,0 +1,17 @@
+class Chapter {
+  String lectureId;
+  String title;
+  bool isPublic;
+  bool isActive;
+  String ownerId;
+  List items = []; //it can be a quiz, an article, a video
+
+  Chapter({
+    this.lectureId,
+    this.title,
+    this.isPublic,
+    this.isActive,
+    this.ownerId,
+    this.items,
+  });
+}

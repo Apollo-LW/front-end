@@ -175,7 +175,7 @@ class Recent extends StatelessWidget {
         child: Text("course"),
       ),
       // bottomNavigationBar: BottomTabbarExample(),
-      // endDrawer: NavDrawer(),
+      // drawer: NavDrawer(),
     );
   }
 }

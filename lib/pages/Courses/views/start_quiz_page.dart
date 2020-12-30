@@ -3,26 +3,9 @@ import 'package:Apollo/pages/Courses/quiz_score.dart';
 import 'package:Apollo/pages/Courses/views/question_page.dart';
 import 'package:flutter/material.dart';
 
-String computeQuizDurationString(int durationSeconds) {
-  String dur = "";
-  if ((durationSeconds / 3600) < 10) {
-    dur += "0" + (durationSeconds / 3600).toInt().toString() + ":";
-  } else {
-    dur += (durationSeconds / 3600).toInt().toString() + ":";
-  }
-  if ((durationSeconds % 3600) / 60 < 10) {
-    dur += "0" + ((durationSeconds % 3600) / 60).toInt().toString();
-  } else {
-    dur += ((durationSeconds % 3600) / 60).toInt().toString();
-  }
-
-  return dur;
-}
-
 class StartQuizPage extends StatelessWidget {
   Quiz quiz;
-  final bool isPreview;
-  StartQuizPage({@required this.quiz, this.isPreview = false});
+  StartQuizPage({@required this.quiz});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,8 +32,9 @@ class StartQuizPage extends StatelessWidget {
                 ),
                 Text(
                   "Quiz Duration " +
-                      computeQuizDurationString(
-                          quiz.quizDurationInSeconds.toInt()),
+                      (quiz.quizDurationInSeconds / 60).toInt().toString() +
+                      ":" +
+                      (quiz.quizDurationInSeconds % 60).toString(),
                   style: TextStyle(fontSize: 20),
                 ),
                 Spacer(),
@@ -67,7 +51,6 @@ class StartQuizPage extends StatelessWidget {
                                 quiz: quiz,
                                 questionNumber: 0,
                                 timeLeft: null,
-                                isPreview: isPreview,
                               )),
                     );
                   },

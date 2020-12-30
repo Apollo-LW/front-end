@@ -71,7 +71,7 @@ class CourseView extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: NavDrawer(),
+      drawer: NavDrawer(),
     );
   }
 }

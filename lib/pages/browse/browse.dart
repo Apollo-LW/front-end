@@ -72,7 +72,7 @@ class Browse extends StatelessWidget {
           CourseList(title: "Astronomy"),
         ],
       ),
-      endDrawer: NavDrawer(),
+      drawer: NavDrawer(),
     );
   }
 }

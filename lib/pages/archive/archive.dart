@@ -61,7 +61,6 @@ class Archive extends StatelessWidget {
           CourseList(title: "2017 - 2018"),
         ],
       ),
-      // endDrawer: NavDrawer(),
     );
   }
 }

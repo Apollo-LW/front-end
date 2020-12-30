@@ -10,8 +10,7 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 
 class FinishQuizPage extends StatefulWidget {
   Quiz quiz;
-  final bool isPreview;
-  FinishQuizPage({this.quiz, this.isPreview});
+  FinishQuizPage({this.quiz});
   @override
   _FinishQuizPageState createState() => _FinishQuizPageState();
 }
@@ -54,16 +53,8 @@ class _FinishQuizPageState extends State<FinishQuizPage> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-                    if (widget.isPreview) {
-                      int count = 0;
-                      Navigator.of(context).popUntil(
-                          (_) => count++ >= (widget.quiz.numberOfQuestions));
-                    } else {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CourseView()));
-                    }
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => CourseView()));
                   },
                   child: Text("Finished"),
                 ),

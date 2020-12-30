@@ -138,8 +138,3 @@ class Lecture {
     this.lectureDocuments,
   });
 }
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d1338acb51a84032b01436c185e9dd24554575d1

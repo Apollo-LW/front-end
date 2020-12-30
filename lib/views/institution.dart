@@ -46,7 +46,7 @@ class Institution extends StatelessWidget {
         // backgroundColor: Color.red,
         child: Text("course"),
       ),
-      endDrawer: NavDrawer(),
+      drawer: NavDrawer(),
     );
   }
 }
