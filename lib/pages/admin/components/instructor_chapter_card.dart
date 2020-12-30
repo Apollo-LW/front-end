@@ -27,6 +27,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
   Widget build(BuildContext context) {
     if (widget.chapter.items != null) if (!widget.chapter.items.isEmpty)
       showDivider = true;
+
     return Padding(
       padding: const EdgeInsets.only(right: 16.0, left: 16, bottom: 32),
       child: Column(
@@ -171,9 +172,8 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                               onPressed: () {
                                                 deleteItem(index);
 
-                                                //previous code
-                                                // widget.chapter.items
-                                                //     .removeAt(index);
+                                                widget.chapter.items
+                                                    .removeAt(index);
                                                 if (widget
                                                     .chapter.items.isEmpty)
                                                   showDivider = false;
