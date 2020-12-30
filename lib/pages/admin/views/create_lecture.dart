@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
 import 'package:Apollo/pages/admin/views/create_article.dart';

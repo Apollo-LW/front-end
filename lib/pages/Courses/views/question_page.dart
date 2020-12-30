@@ -11,13 +11,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 
 class QuestionPage extends StatefulWidget {
+  final bool isPreview;
   Quiz quiz;
   int questionNumber;
   int timeLeft;
   QuestionPage(
       {@required this.quiz,
       @required this.questionNumber,
-      @required this.timeLeft});
+      @required this.timeLeft,
+      this.isPreview});
   @override
   _QuestionPageState createState() => _QuestionPageState(
       quiz: quiz, questionNumber: questionNumber, timeLeft: timeLeft);
@@ -193,14 +195,17 @@ class _QuestionPageState extends State<QuestionPage> {
                                         questionNumber: (questionNumber + 1),
                                         quiz: quiz,
                                         timeLeft: timeLeft,
+                                        isPreview: widget.isPreview,
                                       )),
                             );
                           } else {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      FinishQuizPage(quiz: quiz)),
+                                  builder: (context) => FinishQuizPage(
+                                        quiz: quiz,
+                                        isPreview: widget.isPreview,
+                                      )),
                             );
                           }
                         },

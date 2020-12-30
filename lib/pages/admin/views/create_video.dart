@@ -1,5 +1,5 @@
 import 'package:Apollo/pages/Courses/models/article.dart';
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';
 import 'package:Apollo/pages/Courses/models/video.dart';
@@ -9,7 +9,10 @@ import 'package:flutter/material.dart';
 
 class CreateVideo extends StatefulWidget {
   Chapter chapter;
-  CreateVideo({@required this.chapter});
+  final bool isEditPage;
+  final int videoIndex; //article index to edit
+  CreateVideo(
+      {@required this.chapter, this.isEditPage = false, this.videoIndex});
 
   @override
   _CreateVideoState createState() => _CreateVideoState();
@@ -21,14 +24,69 @@ class _CreateVideoState extends State<CreateVideo> {
   TextEditingController captionTextEditingController = TextEditingController();
   TextEditingController urlTextEditingController = TextEditingController();
 
-  List<ResourceTextField> resourceTextFields = [ResourceTextField()];
+  List<ResourceTextField> resourceTextFields = [];
+
+  getInitialEditPageData() {
+    if (widget.isEditPage) {
+      captionTextEditingController.text =
+          widget.chapter.items[widget.videoIndex].caption;
+      titleTextEditingController.text =
+          widget.chapter.items[widget.videoIndex].title;
+      urlTextEditingController.text =
+          widget.chapter.items[widget.videoIndex].url;
+
+      widget.chapter.items[widget.videoIndex].resources.forEach((element) {
+        resourceTextFields.add(ResourceTextField());
+      });
+
+      if (widget.chapter.items[widget.videoIndex].resources.length > 0) {
+        for (int i = 0; i < resourceTextFields.length; i++) {
+          resourceTextFields[i].resourceLinkController.text =
+              widget.chapter.items[widget.videoIndex].resources[i].link.url;
+          resourceTextFields[i].resourceTitleController.text =
+              widget.chapter.items[widget.videoIndex].resources[i].link.title;
+        }
+      }
+    } else {
+      resourceTextFields.add(ResourceTextField());
+    }
+  }
+
+  onPressContinue() {
+    if (widget.isEditPage) {
+      setState(() {
+        widget.chapter.items[widget.videoIndex].caption =
+            titleTextEditingController.text;
+        widget.chapter.items[widget.videoIndex].title =
+            titleTextEditingController.text;
+        widget.chapter.items[widget.videoIndex].resources = getResources();
+      });
+
+      Navigator.pop(context);
+    } else {
+      widget.chapter.items.add(Video(
+        title: titleTextEditingController.text,
+        caption: captionTextEditingController.text,
+        url: urlTextEditingController.text,
+        resources: getResources(),
+      ));
+      int count = 0;
+      Navigator.of(context).popUntil((_) => count++ >= 2);
+    }
+  }
+
+  @override
+  void initState() {
+    getInitialEditPageData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     if (widget.chapter.items == null) widget.chapter.items = [];
     return Scaffold(
       appBar: AppBar(
-        title: Text("اضافة فيديو"),
+        title: Text(widget.isEditPage ? "تحرير الفيديو" : "اضافة فيديو"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -113,16 +171,7 @@ class _CreateVideoState extends State<CreateVideo> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: () {
-                    widget.chapter.items.add(Video(
-                        url: urlTextEditingController.text,
-                        title: titleTextEditingController.text,
-                        caption: captionTextEditingController.text,
-                        resources: getResources(),
-                        itemNumber: (widget.chapter.items.length + 1)));
-                    int count = 0;
-                    Navigator.of(context).popUntil((_) => count++ >= 2);
-                  },
+                  onPressed: onPressContinue,
                   child: Text("إنشاء"),
                 ),
               ),

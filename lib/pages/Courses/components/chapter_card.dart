@@ -109,13 +109,6 @@ class ChapterCard extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    chapter.items[index].itemNumber.toString(),
-                                    style: TextStyle(fontSize: 18),
-                                  ),
-                                  SizedBox(
-                                    width: 24,
-                                  ),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -127,20 +120,20 @@ class ChapterCard extends StatelessWidget {
                                                 ".."
                                             : chapter.items[index].title,
                                       ),
-                                      Text(chapter.items[index].subtitle +
-                                          (chapter.items[index].subtitle ==
-                                                  "Quiz"
-                                              ? " - " +
-                                                  chapter.items[index]
-                                                      .numberOfQuestions
-                                                      .toString() +
-                                                  " Questions"
-                                              : chapter.items[index].subtitle ==
-                                                      "Article"
-                                                  ? ""
-                                                  : " - " +
-                                                      chapter.items[index]
-                                                          .length)),
+                                      Text((chapter.items[index].subtitle ==
+                                              "Quiz"
+                                          ? ("اختبار - " +
+                                              chapter.items[index]
+                                                  .numberOfQuestions
+                                                  .toString() +
+                                              " اسئلة")
+                                          : chapter.items[index].subtitle ==
+                                                  "Article"
+                                              ? "مقال"
+                                              : "فيديو " +
+                                                  (chapter.items[index]
+                                                          .length ??
+                                                      ""))),
                                     ],
                                   ),
                                 ],

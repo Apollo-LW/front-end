@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/question.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
 import 'package:Apollo/theme/AppColors.dart';
@@ -7,7 +7,10 @@ import 'package:flutter_picker/Picker.dart';
 
 class CreateQuiz extends StatefulWidget {
   Chapter chapter;
-  CreateQuiz({@required this.chapter});
+  final bool isEditPage;
+  final int articleIndex; //article index to edit
+  CreateQuiz(
+      {@required this.chapter, this.isEditPage = false, this.articleIndex});
   @override
   _CreateQuizState createState() => _CreateQuizState();
 }
@@ -15,15 +18,62 @@ class CreateQuiz extends StatefulWidget {
 class _CreateQuizState extends State<CreateQuiz> {
   TextEditingController titleTextEditingController = TextEditingController();
   TextEditingController numberOfQuestionsController = TextEditingController();
-  Duration duration = Duration(minutes: 60);
-  List<QuestionTextField> questionTextFields = [
-    QuestionTextField(
-      1,
-    )
-  ];
+  Duration quizDuration = Duration(seconds: 60);
+
+  List<QuestionTextField> questionTextFields = [];
+
+  getQuestions() {
+    List<Question> questions = List();
+
+    questionTextFields.forEach((element) {
+      if (element.questionTitleController.text != "" &&
+          element.correctAnswerController.text != "" &&
+          element.getOptions() != [])
+        questions.add(Question(
+            title: element.questionTitleController.text,
+            options: element.getOptions(),
+            correctOption: element.correctAnswerController.text));
+    });
+    return questions;
+  }
+
+  getInitialEditPageData() {
+    if (widget.isEditPage) {
+      titleTextEditingController.text =
+          widget.chapter.items[widget.articleIndex].title;
+      numberOfQuestionsController.text =
+          (widget.chapter.items[widget.articleIndex].numberOfQuestions)
+              .toString();
+      quizDuration = Duration(
+          seconds:
+              widget.chapter.items[widget.articleIndex].quizDurationInSeconds);
+
+      int i = 1;
+      widget.chapter.items[widget.articleIndex].questions.forEach((element) {
+        questionTextFields.add(QuestionTextField(i++));
+      });
+
+      if (widget.chapter.items[widget.articleIndex].questions.length > 0) {
+        for (int i = 0; i < questionTextFields.length; i++) {
+          questionTextFields[i].questionTitleController.text =
+              widget.chapter.items[widget.articleIndex].questions[i].title;
+          questionTextFields[i].correctAnswerController.text = widget
+              .chapter.items[widget.articleIndex].questions[i].correctOption;
+          for (int j = 0; j < 4; j++) {
+            questionTextFields[i].optionsTextFields[j].optionController.text =
+                widget
+                    .chapter.items[widget.articleIndex].questions[i].options[j];
+          }
+        }
+      }
+    } else {
+      questionTextFields.add(QuestionTextField(1));
+    }
+  }
 
   @override
   void initState() {
+    getInitialEditPageData();
     if (numberOfQuestionsController.text == null ||
         numberOfQuestionsController.text == "")
       numberOfQuestionsController.text = "1";
@@ -48,7 +98,7 @@ class _CreateQuizState extends State<CreateQuiz> {
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text("انشاء اختبار"),
+        title: Text(widget.isEditPage ? "تعديل الاختبار" : "انشاء اختبار"),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -73,70 +123,91 @@ class _CreateQuizState extends State<CreateQuiz> {
                 keyboardType: TextInputType.number,
                 controller: numberOfQuestionsController,
                 onChanged: (val) {
-                  questionTextFields = [];
-                  for (int i = 1; i <= int.parse(val); i++) {
-                    setState(() {
-                      questionTextFields.add(QuestionTextField(i));
-                    });
+                  int originalLength = questionTextFields.length;
+                  if (int.parse(val) > originalLength) {
+                    for (int i = originalLength; i < int.parse(val); i++) {
+                      setState(() {
+                        questionTextFields.add(QuestionTextField((i + 1)));
+                      });
+                    }
+                  } else if (int.parse(val) < originalLength) {
+                    for (int i = 0;
+                        i < (originalLength - int.parse(val));
+                        i++) {
+                      setState(() {
+                        questionTextFields.removeLast();
+                        print(i);
+                      });
+                    }
                   }
                 },
               ),
               SizedBox(
-                height: 20,
+                height: 24,
               ),
-              FlatButton(
-                padding: EdgeInsets.zero,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Text(
-                          "مدة الاختبار",
-                          style: TextStyle(color: Colors.grey),
-                        ),
+              Container(
+                width: 130,
+                child: RaisedButton(
+                  color: Colors.blueGrey.shade400,
+                  padding: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "مدة الاختبار",
+                              ),
+                              SizedBox(
+                                width: 6,
+                              ),
+                              Icon(Icons.timer)
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    Picker(
+                      adapter: NumberPickerAdapter(data: <NumberPickerColumn>[
+                        const NumberPickerColumn(
+                            begin: 0, end: 10, suffix: Text('ساعات  ')),
+                        const NumberPickerColumn(
+                            begin: 1, end: 60, suffix: Text(' دقائق ')),
+                      ]),
+                      delimiter: <PickerDelimiter>[
+                        PickerDelimiter(
+                          child: Container(
+                            width: 30.0,
+                            alignment: Alignment.center,
+                            child: Icon(Icons.more_vert),
+                          ),
+                        )
                       ],
-                    ),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Container(
-                      height: 1,
-                      color: AppColors.neutrals[700].withOpacity(0.5),
-                    )
-                  ],
+                      hideHeader: true,
+                      confirmText: 'تأكيد',
+                      confirmTextStyle: TextStyle(
+                          inherit: false, color: Colors.red, fontSize: 22),
+                      title: const Text('اختر مدة الاختبار'),
+                      selectedTextStyle: TextStyle(color: Colors.blue),
+                      onConfirm: (Picker picker, List<int> value) {
+                        // You get your duration here
+                        setState(() {
+                          quizDuration = Duration(
+                              hours: picker.getSelectedValues()[0],
+                              minutes: picker.getSelectedValues()[1]);
+                          print(quizDuration.inSeconds);
+                        });
+                      },
+                    ).showDialog(context);
+                  },
                 ),
-                onPressed: () {
-                  Picker(
-                    adapter: NumberPickerAdapter(data: <NumberPickerColumn>[
-                      const NumberPickerColumn(
-                          begin: 0, end: 10, suffix: Text('ساعات  ')),
-                      const NumberPickerColumn(
-                          begin: 1, end: 60, suffix: Text(' دقائق ')),
-                    ]),
-                    delimiter: <PickerDelimiter>[
-                      PickerDelimiter(
-                        child: Container(
-                          width: 30.0,
-                          alignment: Alignment.center,
-                          child: Icon(Icons.more_vert),
-                        ),
-                      )
-                    ],
-                    hideHeader: true,
-                    confirmText: 'تأكيد',
-                    confirmTextStyle: TextStyle(
-                        inherit: false, color: Colors.red, fontSize: 22),
-                    title: const Text('اختر مدة الاختبار'),
-                    selectedTextStyle: TextStyle(color: Colors.blue),
-                    onConfirm: (Picker picker, List<int> value) {
-                      // You get your duration here
-                      duration = Duration(
-                          hours: picker.getSelectedValues()[0],
-                          minutes: picker.getSelectedValues()[1]);
-                      print(duration.inSeconds);
-                    },
-                  ).showDialog(context);
-                },
               ),
               SizedBox(
                 height: 32,
@@ -158,29 +229,34 @@ class _CreateQuizState extends State<CreateQuiz> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-                    List<Question> questions = List();
+                    if (widget.isEditPage) {
+                      setState(() {
+                        widget.chapter.items[widget.articleIndex].title =
+                            titleTextEditingController.text;
+                        widget.chapter.items[widget.articleIndex]
+                                .numberOfQuestions =
+                            int.parse(numberOfQuestionsController.text);
+                        widget.chapter.items[widget.articleIndex].questions =
+                            getQuestions();
+                        widget.chapter.items[widget.articleIndex]
+                            .quizDurationInSeconds = quizDuration.inSeconds;
+                      });
 
-                    questionTextFields.forEach((element) {
-                      if (element.questionTitleController.text != "" &&
-                          element.correctAnswerController.text != "" &&
-                          element.getOptions() != [])
-                        questions.add(Question(
-                            title: element.questionTitleController.text,
-                            options: element.getOptions(),
-                            correctOption:
-                                element.correctAnswerController.text));
-                    });
+                      Navigator.pop(context);
+                    } else {
+                      List<Question> questions = getQuestions();
 
-                    widget.chapter.items.add(Quiz(
-                        title: titleTextEditingController.text,
-                        itemNumber: (widget.chapter.items.length + 1),
-                        questions: questions,
-                        numberOfQuestions: questions.length,
-                        quizDurationInSeconds: duration.inSeconds));
-                    int count = 0;
-                    Navigator.of(context).popUntil((_) => count++ >= 2);
+                      widget.chapter.items.add(Quiz(
+                          title: titleTextEditingController.text,
+                          itemNumber: (widget.chapter.items.length + 1),
+                          questions: questions,
+                          numberOfQuestions: questions.length,
+                          quizDurationInSeconds: quizDuration.inSeconds));
+                      int count = 0;
+                      Navigator.of(context).popUntil((_) => count++ >= 2);
+                    }
                   },
-                  child: Text("إنشاء"),
+                  child: Text(widget.isEditPage ? "تحرير" : "إنشاء"),
                 ),
               ),
             ],
