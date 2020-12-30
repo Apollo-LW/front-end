@@ -76,7 +76,7 @@ class _Step2State extends State<Step2> {
               angle: pi,
               child: FAProgressBar(
                 currentValue: 2,
-                maxValue: 4,
+                maxValue: 3,
                 direction: Axis.horizontal,
                 verticalDirection: VerticalDirection.up,
                 backgroundColor: Colors.grey.withOpacity(0.3),
@@ -87,7 +87,7 @@ class _Step2State extends State<Step2> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 8),
               child: Text(
-                "خطوة 2 من 4",
+                "خطوة 2 من 3",
                 style: TextStyle(fontSize: 16),
               ),
             ),

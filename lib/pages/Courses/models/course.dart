@@ -6,9 +6,9 @@ class Course {
   String category;
   bool isPublic;
   bool isPublished;
-  List<String> owners;
+  List<String> instructors;
   List<String> members;
-  List<Chapter> courseChapters;
+  List<Chapter> chapters = [];
   String courseType;
   DateTime courseDateOfCreation;
   String courseId;
@@ -16,10 +16,10 @@ class Course {
   String courseImg;
 
   Course(
-      {this.isPublished,
-      this.isPublic,
-      this.owners,
-      this.courseChapters,
+      {this.isPublished = false,
+      this.isPublic = false,
+      this.instructors,
+      this.chapters,
       this.members,
       this.courseType,
       this.courseDateOfCreation,

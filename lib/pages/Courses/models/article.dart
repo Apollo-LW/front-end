@@ -5,7 +5,6 @@ class Article {
   String title;
   int itemNumber;
   String text;
-
   List<Resource> resources;
 
   //ui shit

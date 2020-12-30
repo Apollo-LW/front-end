@@ -1,15 +1,18 @@
 import 'dart:math';
 
+import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
 import 'package:Apollo/pages/admin/onboarding/step_2.dart';
 import 'package:Apollo/pages/admin/onboarding/step_4.dart';
+import 'package:Apollo/pages/admin/views/teacher_course_view.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:uuid/uuid.dart';
 
 class Step3 extends StatefulWidget {
   final String title;
@@ -54,7 +57,7 @@ class _Step3State extends State<Step3> {
               angle: pi,
               child: FAProgressBar(
                 currentValue: 3,
-                maxValue: 4,
+                maxValue: 3,
                 direction: Axis.horizontal,
                 verticalDirection: VerticalDirection.up,
                 backgroundColor: Colors.grey.withOpacity(0.3),
@@ -65,7 +68,7 @@ class _Step3State extends State<Step3> {
             Padding(
               padding: const EdgeInsets.only(top: 8.0, left: 8),
               child: Text(
-                "خطوة 3 من 4",
+                "خطوة 3 من 3",
                 style: TextStyle(fontSize: 16),
               ),
             ),
@@ -107,10 +110,8 @@ class _Step3State extends State<Step3> {
                   onPressed: () {
                     Navigator.pushReplacement(context, MaterialPageRoute(
                       builder: (context) {
-                        return Step4(
-                          title: widget.title,
-                          category: widget.category,
-                          description: textEditingController.text,
+                        return TeacherCourseView(
+                          course: creationOfCourse(),
                         );
                       },
                     ));
@@ -123,5 +124,16 @@ class _Step3State extends State<Step3> {
         ),
       ),
     );
+  }
+
+  Course creationOfCourse() {
+    var uuid = Uuid().v4;
+    Course course = Course(
+        title: widget.title,
+        description: textEditingController.text,
+        category: widget.category,
+        instructors: ["logged in username"],
+        courseId: uuid.toString());
+    return course;
   }
 }

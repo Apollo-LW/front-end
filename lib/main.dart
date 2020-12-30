@@ -43,7 +43,7 @@ void main() => runApp(Align(
 
             '/chat': (context) => Chat(),
 
-            '/course': (context) => Course(),
+            '/course': (context) => CourseView(),
 
             '/browse': (context) => Browse(),
 

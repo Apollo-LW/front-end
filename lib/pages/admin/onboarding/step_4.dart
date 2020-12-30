@@ -1,15 +1,18 @@
 import 'dart:math';
 
 import 'package:Apollo/pages/Courses/Course.dart';
+import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/admin/components/course_partner_text_field.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
+import 'package:Apollo/pages/admin/views/teacher_course_view.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:uuid/uuid.dart';
 
 class Step4 extends StatefulWidget {
   final String title;
@@ -128,7 +131,7 @@ class _Step4State extends State<Step4> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: onPressNext,
+                  onPressed: onPressCreateCourse1,
                   child: Text(
                     "إنشاء الدورة",
                   ),
@@ -141,10 +144,48 @@ class _Step4State extends State<Step4> {
     );
   }
 
-  void onPressNext() {
+  void onPressCreateCourse1() {
     if (partnershipCardIsChosen) {
       buildDialog();
+    } else {
+      Course course =
+          creationOfCourse(["logged in username"]); //create a course object
+
+      Navigator.pushReplacement(context, MaterialPageRoute(
+        builder: (context) {
+          return TeacherCourseView(
+            course: course,
+          );
+        },
+      ));
     }
+  }
+
+  Course creationOfCourse(instrutors) {
+    var uuid = Uuid().v4;
+    Course course = Course(
+        title: widget.title,
+        description: widget.description,
+        category: widget.category,
+        instructors: ["logged in username"],
+        courseId: uuid.toString());
+    return course;
+  }
+
+  void onPressCreateCourse2() {
+    //fetch the list of instructors that the user entered
+    List<String> instructors = new List();
+    instructors.add("logged in username");
+    coursePartnerTextFields.forEach((widget) {
+      if (widget.textEditingController.text != "")
+        instructors.add(widget.textEditingController.text);
+    });
+    Course course = creationOfCourse(instructors); //create a course object
+    Navigator.pushReplacement(context, MaterialPageRoute(
+      builder: (context) {
+        return TeacherCourseView(course: course);
+      },
+    ));
   }
 
   buildDialog() {
@@ -173,6 +214,9 @@ class _Step4State extends State<Step4> {
                             return coursePartnerTextFields[index];
                           },
                         )),
+                    SizedBox(
+                      height: 40,
+                    ),
                     InkWell(
                       onTap: () {
                         setState(() {
@@ -202,12 +246,27 @@ class _Step4State extends State<Step4> {
                     SizedBox(
                       height: 20,
                     ),
-                    DialogButton(
-                      child: Text(
-                        "إلغاء",
-                        style: TextStyle(color: Colors.white, fontSize: 20),
-                      ),
-                      onPressed: () => Navigator.pop(context),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        DialogButton(
+                            width: MediaQuery.of(context).size.width / 3,
+                            color: Colors.grey.shade500,
+                            child: Text(
+                              "إنشاء الدورة",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => onPressCreateCourse2()),
+                        DialogButton(
+                            width: MediaQuery.of(context).size.width / 3,
+                            child: Text(
+                              "إلغاء",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 20),
+                            ),
+                            onPressed: () => Navigator.pop(context)),
+                      ],
                     )
                   ],
                 ),

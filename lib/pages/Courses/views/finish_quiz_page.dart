@@ -54,7 +54,7 @@ class _FinishQuizPageState extends State<FinishQuizPage> {
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Course()));
+                        MaterialPageRoute(builder: (context) => CourseView()));
                   },
                   child: Text("Finished"),
                 ),

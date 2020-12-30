@@ -16,7 +16,7 @@ class ResourcesComponent extends StatelessWidget {
   ResourcesComponent({@required this.resources});
   @override
   Widget build(BuildContext context) {
-    return resources != null
+    return resources != null && resources.length > 0
         ? Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

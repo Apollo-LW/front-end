@@ -7,18 +7,20 @@ class IconCard extends StatelessWidget {
   final bool isChosen;
   final IconData icon;
   final String title;
+  final Color color;
   IconCard(
       {this.isChosen,
       this.icon = Icons.school,
-      this.title = " نعم, تتبع الى جهة معينة"});
+      this.title = " نعم, تتبع الى جهة معينة",
+      this.color = Colors.blueAccent});
 
   @override
   Widget build(BuildContext context) {
     return CategoryTile(
         icon: icon,
         iconColor: isChosen == null || isChosen == false
-            ? AppColors.darkBlue
-            : AppColors.darkBlue.withOpacity(0.9),
+            ? color
+            : color.withOpacity(0.9),
         containerColor: isChosen == null || isChosen == false
             ? Colors.grey.shade200
             : Colors.grey.shade200.withOpacity(0.8),
