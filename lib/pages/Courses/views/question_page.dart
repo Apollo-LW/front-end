@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:Apollo/pages/Courses/models/quiz.dart';
 import 'package:Apollo/pages/Courses/quiz_score.dart';
@@ -88,13 +89,16 @@ class _QuestionPageState extends State<QuestionPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FAProgressBar(
-                    currentValue:
-                        (((questionNumber) / quiz.questions.length) * 100)
-                            .toInt(),
-                    backgroundColor: Colors.grey.withOpacity(0.3),
-                    borderRadius: 20,
-                    displayText: '%',
+                  Transform.rotate(
+                    angle: pi,
+                    child: FAProgressBar(
+                      currentValue:
+                          (((questionNumber) / quiz.questions.length) * 100)
+                              .toInt(),
+                      backgroundColor: Colors.grey.withOpacity(0.3),
+                      borderRadius: 20,
+                      displayText: '%',
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 8.0),

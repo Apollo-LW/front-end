@@ -5,7 +5,7 @@ import 'package:Apollo/pages/chat/chat.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Course extends StatelessWidget {
+class CourseView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

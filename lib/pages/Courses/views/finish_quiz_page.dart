@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:Apollo/pages/Courses/Course.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
 import 'package:Apollo/pages/Courses/quiz_score.dart';
@@ -22,11 +24,14 @@ class _FinishQuizPageState extends State<FinishQuizPage> {
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-              FAProgressBar(
-                currentValue: 100.toInt(),
-                backgroundColor: Colors.grey.withOpacity(0.3),
-                borderRadius: 20,
-                displayText: '%',
+              Transform.rotate(
+                angle: pi,
+                child: FAProgressBar(
+                  currentValue: 100.toInt(),
+                  backgroundColor: Colors.grey.withOpacity(0.3),
+                  borderRadius: 20,
+                  displayText: '%',
+                ),
               ),
               SizedBox(
                 height: 58,
@@ -49,7 +54,7 @@ class _FinishQuizPageState extends State<FinishQuizPage> {
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Course()));
+                        MaterialPageRoute(builder: (context) => CourseView()));
                   },
                   child: Text("Finished"),
                 ),

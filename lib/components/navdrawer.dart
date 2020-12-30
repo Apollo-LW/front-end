@@ -1,3 +1,5 @@
+import 'package:Apollo/pages/admin/onboarding/step.dart';
+import 'package:Apollo/pages/admin/onboarding/step_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -131,6 +133,18 @@ class NavDrawer extends StatelessWidget {
           leading: const Icon(Icons.security),
           onTap: () {
             Navigator.pop(context);
+          },
+        ),
+        Divider(),
+        ListTile(
+          title: Text("إنشاء دورة جديدة"),
+          leading: const Icon(Icons.school),
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Step1(),
+                ));
           },
         ),
       ],

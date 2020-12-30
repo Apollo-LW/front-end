@@ -1,6 +1,11 @@
 class CourseResponse {
   final bool isActive, isPublic;
-  final String courseId, courseName, courseDateOfCreation, error;
+  final String courseId,
+      courseName,
+      courseDateOfCreation,
+      error,
+      category,
+      description;
   final List<dynamic> courseChapters, courseOwners, courseMembers;
 
   CourseResponse(
@@ -12,7 +17,9 @@ class CourseResponse {
       this.courseOwners,
       this.courseMembers,
       this.courseDateOfCreation,
-      this.error});
+      this.error,
+      this.category,
+      this.description});
 
   factory CourseResponse.fromJson(Map<String, dynamic> json) {
     return CourseResponse(

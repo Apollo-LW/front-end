@@ -120,3 +120,21 @@ Course(
     itemName:,
     itemUrl:,
   ], */
+
+class Lecture {
+  String lectureId;
+  bool isPublic;
+  bool isActive;
+  String ownerId;
+  List<String> lectureVideos;
+  List<String> lectureDocuments;
+
+  Lecture({
+    this.lectureId,
+    this.isPublic,
+    this.isActive,
+    this.ownerId,
+    this.lectureVideos,
+    this.lectureDocuments,
+  });
+}
