@@ -11,7 +11,7 @@ class CreateQuiz extends StatefulWidget {
   final int articleIndex; //article index to edit
   CreateQuiz(
       {@required this.chapter, this.isEditPage = false, this.articleIndex});
-  @override
+  @overridei
   _CreateQuizState createState() => _CreateQuizState();
 }
 

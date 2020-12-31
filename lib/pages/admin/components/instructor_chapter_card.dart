@@ -25,7 +25,8 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
   bool showDivider = true;
   @override
   Widget build(BuildContext context) {
-    if (!widget.chapter.items.isEmpty) showDivider = true;
+    if (widget.chapter.items != null) if (!widget.chapter.items.isEmpty)
+      showDivider = true;
     return Padding(
       padding: const EdgeInsets.only(right: 16.0, left: 16, bottom: 32),
       child: Column(
