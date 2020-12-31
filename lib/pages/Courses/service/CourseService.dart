@@ -13,7 +13,7 @@ import 'package:dio/dio.dart';
 
 class CourseService {
   final String jsonDataHeader = "application/json";
-  final String _endpoint = "http://192.168.100.49:8081/course/";
+  final String _endpoint = "";
   final Dio _dio = Dio();
 
   Future<CourseResponse> getCourseById(String courseId) async {

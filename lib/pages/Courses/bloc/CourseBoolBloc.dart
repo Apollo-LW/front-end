@@ -48,7 +48,7 @@ class CourseBoolBloc {
     _courseBoolSubject.sink.add(event);
   }
 
-  addLectureToCourse(String courseId, String chapterId, String ownerId,
+  addLectureToChapter(String courseId, String chapterId, String ownerId,
       Lecture lecture) async {
     bool event = await _courseService.addLectureToChapter(
         (courseId), chapterId, ownerId, lecture);
