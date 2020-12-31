@@ -418,7 +418,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                         width: MediaQuery.of(context).size.width / 3,
                         color: Colors.grey.shade500,
                         child: Text(
-                          "تعديل اسم الوحدة",
+                          "تعديل الاسم",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,
