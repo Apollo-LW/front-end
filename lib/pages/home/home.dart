@@ -17,7 +17,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<CourseResponse> courses = [Data.course6, Data.course4, Data.course5];
+  List<CourseResponse> courses = [Data.course9, Data.course6, Data.course5];
   // List<List<CourseResponse>> listCourses = [
   //   [
   //     CourseResponse(

@@ -17,20 +17,10 @@ class _ArchiveState extends State<Archive> {
   List<CourseResponse> courses = [];
   List<List<CourseResponse>> listCourses = [
     [
-      CourseResponse(
-          courseName: "Asdf",
-          courseId: "asdf",
-          category: "sdf",
-          description:
-              "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم . من المفترض أن نفرق بين هذه الحالات بكل سهولة ومرونة. في ذاك الوقت عندما تكون قدرتنا علي الاختيار غير مقيدة بشرط وعندما لا نجد ما يمنعنا أن نفعل الأفضل فها نحن نرحب بالسرور والسعادة ونتجنب كل ما يبعث إلينا الألم. في بعض الأحيان ونظراً للالتزامات التي يفرضها علينا الواجب والعمل سنتنازل غالباً ونرفض الشعور بالسرور ونقبل ما يجلبه إلينا الأسى. الإنسان الحكيم عليه أن يمسك زمام الأمور ويختار إما أن يرفض مصادر السعادة من أجل ما هو أكثر أهمية أو يتحمل الألم من أجل ألا يتحمل ما هو أسوأ. </p>",
-          courseChapters: [Data.chapter1]),
-      CourseResponse(
-          courseName: "Asdf",
-          courseId: "asdf",
-          category: "sdf",
-          description: "Asdf adsf",
-          courseChapters: [Data.chapter1])
-    ]
+      Data.course10,
+      Data.course11,
+    ],
+    [Data.course13, Data.course12]
   ];
 
   List<String> times = [
@@ -103,6 +93,7 @@ class _ArchiveState extends State<Archive> {
           return CourseList(
             courses: listCourses[index],
             title: times[index],
+            isEnrolled: true,
           );
         },
         itemCount: listCourses.length,

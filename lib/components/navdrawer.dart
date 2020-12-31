@@ -124,24 +124,10 @@ class NavDrawer extends StatelessWidget {
                   );
                 },
               ),
-              ListTile(
-                title: Text("Work"),
-                leading: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  child: Text('MA'),
-                ),
-                onTap: () {
-                  Navigator.pop(context);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Institution()),
-                  );
-                },
-              ),
             ]),
         Divider(),
         ListTile(
-          title: Text("كورساتي"),
+          title: Text("الدورات التي أنشأتها"),
           leading: const Icon(Icons.public),
           onTap: () {
             Navigator.push(

@@ -8,6 +8,8 @@ import 'package:Apollo/pages/Courses/models/resource.dart';
 import 'package:Apollo/pages/Courses/models/video.dart';
 
 class Data {
+  static List<Chapter> chapters = [chapter1, chapter1, chapter1];
+
   static Resource resource1 = Resource(
       itemType: "text",
       text:
@@ -15,25 +17,32 @@ class Data {
   static Resource resource2 = Resource(
       itemType: "link",
       link: Link(
-          title: "amazing song",
-          url: "https://www.youtube.com/watch?v=YeHxFBv58PQ"));
+          title: "موريم ايبسوم دولار ",
+          url: "https://cpgovappaward.jo/ar#images-gallery-2"));
+
+  static Resource resource3 = Resource(
+      itemType: "link",
+      link: Link(
+          title: "وريم ايبسو وريم ايبسوم دولار ",
+          url: "https://www.youtube.com/watch?v=WnqFEQ43WlM&feature=emb_logo"));
 
   static Article article1 = Article(
-      title: "What is Lorem Ipsum?",
+      title: "ايبسوم دولار سيت أميت",
       text:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur leo lacus, a iaculis magna mollis eget. Phasellus molestie congue mauris sed auctor. Proin commodo ante quis tellus aliquet, quis consequat nulla rutrum. Nam sed erat non felis consequat blandit vitae et est. Sed sed odio vitae tortor elementum semper. In id viverra tortor, a ultricies ante. Pellentesque convallis mauris in nisl laoreet elementum vitae sed odio. Vestibulum consequat purus quis lacus vehicula, ut ultrices magna ullamcorper. Vestibulum nisi ipsum, condimentum lobortis nibh vitae, malesuada mollis nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer pharetra, nisl eu lobortis tincidunt, risus ante euismod massa, vel consectetur nunc neque venenatis nibh. Proin convallis condimentum blandit. Praesent sagittis elit eget eros laoreet facilisis. Pellentesque auctor tempor nisl nec lacinia.",
+          "<>لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأس.",
       itemNumber: 3,
       resources: [resource2, resource2, resource2]);
-  static Chapter chapter1 = Chapter(chapterName: "Chapter 1- intro", items: [
+  static Chapter chapter1 = Chapter(chapterName: "وريم ايبسوم دولار ", items: [
     Video(
-        title: "Intro To hiuhiuh",
-        resources: [resource2, resource2, resource2],
-        itemNumber: 1,
-        url:
-            'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-        length: "03:30",
-        caption:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim"),
+      title: "وريم ايبسوم دولار سيت أميت",
+      resources: [resource2, resource1, resource2],
+      itemNumber: 1,
+      url:
+          "https://r3---sn-5hne6n7z.googlevideo.com/videoplayback?expire=1609470571&ei=Cz7uX_KAG5XH7gOwkblg&ip=2a0d%3A1000%3A0%3A2%3A92b1%3A1cff%3Afe54%3A402e&id=o-AGCln13tdopAxXhVvY1_JlqkZpBpNoK8QApPEHjckQp4&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=g2qp0SCbdOPfdlk-bR67YtMF&gir=yes&clen=11895708&ratebypass=yes&dur=222.029&lmt=1582371785619037&fvip=5&beids=23886213&c=WEB&txp=2216222&n=crarSRbmpkTh6c8N&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAKqpVIHrbGk3ICxUH6rK2glXK_tQdA3_8FkftPpueux7AiEA1zPy1dlwguOusQES1qLF_vb_2GETiHdag4xUCY3drNU=&cm2rm=sn-8uxa-5hhe7e,sn-5hnks76&fexp=23886213&req_id=a355195dce01a3ee&redirect_counter=2&cms_redirect=yes&mh=dB&mip=185.96.70.26&mm=34&mn=sn-5hne6n7z&ms=ltu&mt=1609448912&mv=m&mvi=5&pl=24&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAPpscJo3GrEmzsKAptbOBFJQ2-YqOkcNBjMBM-yHf_E0AiB0tK6WsdAu4W1kVRncKwsd1mHkwsMm-MOTks2ZdX3sdg%3D%3D&ir=1&rr=12",
+      length: " 03:30",
+      caption:
+          "<>لكن لا بد أن أوضح لك أن كل هذه الأفكار المغلوطة حول استنكار  النشوة وتمجيد الألم نشأت بالفعل، وسأعرض لك التفاصيل لتكتشف حقيقة وأساس تلك السعادة البشرية، فلا أحد يرفض أو يكره أو يتجنب الشعور بالسعادة، ولكن بفضل هؤلاء الأشخاص الذين لا يدركون بأن السعادة لا بد أن نستشعرها بصورة أكثر عقلانية ومنطقية فيعرضهم هذا لمواجهة الظروف الأليمة، وأكرر بأنه لا يوجد من يرغب في الحب ونيل المنال ويتلذذ بالآلام، الألم هو الألم ولكن نتيجة لظروف ما قد تكمن السعاده فيما نتحمله من كد وأس.",
+    ),
     quiz1,
     article1
   ]);
@@ -49,6 +58,7 @@ class Data {
       title: "chapter 1 quiz",
       itemNumber: 4,
       numberOfQuestions: 20,
+      quizDurationInSeconds: 500,
       questions: [question1, question2, question1, question2]);
 
   static CourseResponse course1 = CourseResponse(
@@ -97,14 +107,83 @@ class Data {
         ])
       ]);
 
+  static CourseResponse course9 = CourseResponse(
+      courseName: "تعرف على منصة درسك",
+      imgUrl:
+          "https://images.unsplash.com/photo-1465433045946-ba6506ce5a59?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      category: "شبكات",
+      description:
+          "تعرف على كيفية استخدام منصة درسك للتعلم الالكتروني لتتمكن من مواكبة التقدم, وتستفيد من الحصة الصفية عن بعد.",
+      courseChapters: [
+        Chapter(chapterName: "وحدة 1 - التعريف بالمنصة", items: [
+          Article(
+              title: "ما هي منصة درسك؟",
+              resources: [
+                Resource(
+                    itemType: "link",
+                    text: "موقع المنصة",
+                    link: Link(
+                        title: "موقع المنصة", url: "https://darsak.gov.jo/"))
+              ],
+              text:
+                  "منصة أردنية مجانية للتعلّم عن بُعد، توفر لطلبة المدارس من الصف الأول وحتى الصف الثاني الثانوي دروسًا تعليمية عن طريق مقاطع فيديو مصوَّرة مُنظّمة ومُجدولة وفقًا لمنهاج التعليم الأردنيّ، يُقدّمها نخبة متميزة من المعلمين والمعلمات لتسهّل على الطلبة مواصلة تعلّمهم، ومتابعة موادهم الدراسية. "),
+          Video(
+            title: "فيديو تعريفي عن المنصة",
+            caption:
+                "منصة درسك للتعليم عن بعد متوافرة على... وزارة التربية والتعليم",
+            url:
+                "https://r3---sn-5hnekn76.googlevideo.com/videoplayback?expire=1609468862&ei=XjfuX9m2Lo2QgQeXmYOoBw&ip=2a0d%3A1000%3A0%3A2%3A92b1%3A1cff%3Afe54%3A402e&id=o-AGrrFe11QF80k0Dh6J62coVp5jD6UeyQfEhYfQ4x5R_O&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=xCNOjrHG2wWDQ-rtu_sCtHwF&gir=yes&clen=1343267&ratebypass=yes&dur=61.393&lmt=1584867505037914&fvip=3&beids=23886213&c=WEB&txp=6216222&n=nxHMofHuF_zUCm1y&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhANJb3STqAX59Po9Am_giUno-_GOwtglsEsEhswi6oxB6AiEA8r0Mwn1ovBM9vGqArHy4vE5DWUifhVxIHUFv7fdxrac%3D&cm2rm=sn-8uxa-5hhe7s,sn-5hnee67s&fexp=23886213&req_id=5fcc1f6187ada3ee&redirect_counter=2&cms_redirect=yes&mh=ml&mip=185.96.70.26&mm=34&mn=sn-5hnekn76&ms=ltu&mt=1609447234&mv=m&mvi=3&pl=24&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRAIgFAG6PZmDKJJdsk4zNkp-kB5DIkgzybVP50pzoIp7VYECICmchd1q67qwbpE91Og4y10P2gJcdIhuHCPLaLcHW8Ea",
+            resources: [
+              Resource(
+                  itemType: "link",
+                  text: "موقع المنصة",
+                  link:
+                      Link(title: "موقع المنصة", url: "https://darsak.gov.jo/"))
+            ],
+          )
+        ]),
+        Chapter(chapterName: "الوحدة 2 - كيفية الإستخدام", items: [
+          Video(
+              resources: [
+                Resource(
+                    itemType: "link",
+                    text: "موقع المنصة",
+                    link: Link(
+                        title: "موقع المنصة", url: "https://darsak.gov.jo/")),
+                Resource(
+                    itemType: "link",
+                    text: "اخبار",
+                    link: Link(
+                        title: "اخبار",
+                        url:
+                            "https://alghad.com/%D8%A8%D8%AF%D8%A1-%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D9%8A%D8%A9-%D8%B9%D8%A8%D8%B1-%D9%85%D9%86%D8%B5%D8%A9-%D8%AF%D8%B1%D8%B3%D9%83/"))
+              ],
+              title: "طريقة إنشاء اختبار إلكتروني للطلاب على منصة درسك",
+              url:
+                  "https://r3---sn-5hne6nsk.googlevideo.com/videoplayback?expire=1609468993&ei=4TfuX5mKEdiE7gPPmJfIBQ&ip=2a0d%3A1000%3A0%3A2%3A92b1%3A1cff%3Afe54%3A402e&id=o-AEvkvTF8sC2xBaG-vCwSnmueUoBV2X2SxzqTgeONEFdH&itag=18&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=730pqrM1DYKMHA0316ItjkAF&gir=yes&clen=2157523&ratebypass=yes&dur=124.157&lmt=1601631432452921&fvip=3&beids=23886213&c=WEB&txp=6210222&n=yhfSyKJbz0FCVipL&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAPZpZGwRvWZ06eIHijc1rNGG7Zyx8oVfMqji8jL-Jy0vAiEArkdMIRdb36Wnp-L09ZiFMhyrpxHLQcQ9qP_qQbPkrKk%3D&cm2rm=sn-8uxa-5hhe7s,sn-5hnel77s&fexp=23886213&req_id=5caadb668b92a3ee&redirect_counter=2&cms_redirect=yes&mh=X2&mip=185.96.70.26&mm=34&mn=sn-5hne6nsk&ms=ltu&mt=1609447234&mv=m&mvi=3&pl=24&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAOpoJ_8VdNGZCjtyF2mj6Q_lrMBEMyZEGTozouSV-NTCAiAfbePt4zg57ygzFk5cqOJb9OyIcVbqC5VMxIqe2yINtQ%3D%3D"),
+          Video(
+              resources: [
+                Resource(
+                    itemType: "link",
+                    text: "موقع المنصة",
+                    link: Link(
+                        title: "موقع المنصة", url: "https://darsak.gov.jo/"))
+              ],
+              title: "طريقة انشاء واجب بيتي وارساله للطلاب على منصة درسك",
+              url:
+                  "https://r4---sn-5hne6nlk.googlevideo.com/videoplayback?expire=1609469179&ei=mzjuX7GdN8qrgQfN-LDwDA&ip=2a0d%3A1000%3A0%3A2%3A92b1%3A1cff%3Afe54%3A402e&id=o-AA6MjaMXcnjOFu9UWDZmwX6_ieCke2-9BO5Fy4Xf7TTY&itag=22&source=youtube&requiressl=yes&vprv=1&mime=video%2Fmp4&ns=qNGmjDDEriPnPxQZ1dvECl8F&ratebypass=yes&dur=68.638&lmt=1601133443204496&fvip=4&beids=23886213&c=WEB&txp=6216222&n=KFA8rp4eXqSRAD59&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIhANXD6pZKeQE8LDoOyQuBn1SlHcC9M3Ts4B2ToPhsbm6pAiA14PKidOGyDkTHA2aKxd8ljKWRDEcD2XYI8KGhXwPWOg%3D%3D&cm2rm=sn-8uxa-5hhe7e,sn-5hnee67z&fexp=23886213&req_id=7550b29facb6a3ee&redirect_counter=2&cms_redirect=yes&mh=Yt&mip=185.96.70.26&mm=34&mn=sn-5hne6nlk&ms=ltu&mt=1609447473&mv=m&mvi=4&pl=24&lsparams=mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRgIhAJlyU6R3iPVHcV5NH7vghLN7xgZfoGT-6Z5uh4Ogk4HpAiEAxPspMPNlmit1Bk-9ZYsk-v3Y5BfHcwMQ-yT6oIzxzp8%3D"),
+        ])
+      ]);
+
   static CourseResponse course8 = CourseResponse(
       courseName: "مقدمة في  أمن الشبكات",
       courseId: "asdf",
       imgUrl:
           "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
       category: "الشبكات",
-      description: "ت هي مجموعة من الإجراءات التي يمكن خلالها توفير الحماية القصوى للمعلومات والبيانات في الشبكات من كافة المخاطر التي تهددها، وذلك من خلال توفير الأدوات والوسائل اللازم توفيرها لحماية المعلومات من المخاطر الداخلية أو الخارجية.",
-      courseChapters: [Data.chapter1]);
+      description:
+          "ت هي مجموعة من الإجراءات التي يمكن خلالها توفير الحماية القصوى للمعلومات والبيانات في الشبكات من كافة المخاطر التي تهددها، وذلك من خلال توفير الأدوات والوسائل اللازم توفيرها لحماية المعلومات من المخاطر الداخلية أو الخارجية.",
+      courseChapters: chapters);
 
   static CourseResponse course2 = CourseResponse(
       category: "اللغات",
@@ -112,7 +191,7 @@ class Data {
       courseName: "مقدمة في اللغة الفرنسية",
       imgUrl:
           "https://images.unsplash.com/photo-1485199433301-8b7102e86995?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
-      courseChapters: [Data.chapter1],
+      courseChapters: chapters,
       description:
           " هي إحدى اللغات الرومانسية تحتل المركز الخامس من حيث اللغات الأكثر تحدثاً في العالم، حيث يتكلم بها نحو 80 مليون شخص في جميع أنحاء العالم كلغة رسمية أساسية، وحوالي 190 مليون شخص كلغة رسمية ثانية، وحوالي 274 مليون شخص في جميع أنحاء العالم.");
 
@@ -122,7 +201,7 @@ class Data {
       courseName: "تعلم اللغة الألمانية",
       imgUrl:
           "https://images.unsplash.com/photo-1449452198679-05c7fd30f416?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-      courseChapters: [Data.chapter1],
+      courseChapters: chapters,
       description:
           "هي إحدى اللغات الجرمانيَّة الغربيَّة؛ والتي هي بدورها إحدى فروع العائلة اللغويَّة الهندوأوروبيَّة. وتنتشرُ بصورةٍ رئيسيَّةٍ في أوروبَّا الوسطى فهي لغة رسميَّة لجمهوريَّة أَلمانيا الاتّحاديَّة، وجمهوريَّة النَّمسا، وإمارة ليختنشتاين، وإِحدى اللغات الوطنيَّة الأَربعة لسويسرا");
   static CourseResponse course4 = CourseResponse(
@@ -131,7 +210,7 @@ class Data {
       courseName: "تعرف على منصة درسك",
       imgUrl:
           "https://images.unsplash.com/photo-1465433045946-ba6506ce5a59?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-      courseChapters: [Data.chapter1],
+      courseChapters: chapters,
       description:
           "تعرف على كيفيك استخدام منصة درسك للتعلم الالكتروني لتتمكن من مواكبة تقدم الحصة الصفية عن بعد.");
 
@@ -141,7 +220,7 @@ class Data {
       courseName: "كيفية استخدام openEMIS للمعلمين",
       imgUrl:
           "https://www.openemis.org/wp-content/uploads/2018/04/OpenEMIS_Logo_Size512x199.png",
-      courseChapters: [Data.chapter1],
+      courseChapters: chapters,
       description:
           "تعلم كيفية ادخال علامات الطلاب الى نظام البيانات التابع لوزارة التربية والتعليم");
 
@@ -151,7 +230,56 @@ class Data {
       courseName: "تكتيكات للفوز في الشطرنج",
       imgUrl:
           "https://images.unsplash.com/photo-1602968407815-5963b28c66af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-      courseChapters: [Data.chapter1],
+      courseChapters: chapters,
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
+  static CourseResponse course10 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "وعؤ رؤ ضي لسيك التسيبفاص يسل ",
+      imgUrl:
+          "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cGhvdG9ncmFwaHl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60",
+      courseChapters: chapters,
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
+
+  static CourseResponse course11 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "ور ؤضي لسيك التسيبفاص يسل ",
+      imgUrl:
+          "https://images.unsplash.com/photo-1422246358533-95dcd3d48961?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      courseChapters: chapters,
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
+
+  static CourseResponse course12 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "ور ؤضي لسيك التسيبفاص يسل ",
+      imgUrl:
+          "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+      courseChapters: chapters,
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
+
+  static CourseResponse course13 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "ور ؤضي لسيك التسيبفاص يسل ",
+      imgUrl:
+          "https://images.unsplash.com/photo-1580894742597-87bc8789db3d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      courseChapters: chapters,
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
+
+  static CourseResponse course14 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "ور ؤضي لسيك التسيبفاص يسل ",
+      imgUrl:
+          "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1115&q=80",
+      courseChapters: chapters,
       description:
           "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
 }

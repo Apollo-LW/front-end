@@ -149,11 +149,7 @@ class _Step3State extends State<Step3> {
         courseOwners: ["logged in username"],
         isPublic: false,
         isActive: false,
-        courseChapters: [
-          Chapter(
-              chapterName: "ds",
-              items: [Article(title: "بسيو يس", text: "fsdf", resources: [])])
-        ],
+        courseChapters: [],
         courseId: uuid.toString());
     return course;
   }

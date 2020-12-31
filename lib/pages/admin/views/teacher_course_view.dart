@@ -22,18 +22,14 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
   TabController _tabController;
   TextEditingController chapterTextEditingController = TextEditingController();
   CourseResponse course;
-  int tabsLength = 3;
-  List tabs = [];
-  List tabViews = [];
   @override
   void initState() {
     //todo: 3
     //fetch course info from widget.id and use it instead of widget.course in the code below
     //for ex. course= fetchCuorseFunction(widget.id)
-    tabs = buildTabs();
-    tabViews = buildTabBarView(widget);
+
     super.initState();
-    _tabController = new TabController(length: tabs.length, vsync: this);
+    _tabController = new TabController(length: buildTabs().length, vsync: this);
   }
 
   @override
@@ -67,7 +63,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
               automaticallyImplyLeading: true,
               bottom: TabBar(
                 controller: _tabController,
-                tabs: tabs,
+                tabs: buildTabs(),
                 onTap: (index) {
                   setState(() {});
                 },
@@ -76,7 +72,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
           ];
         },
         body: TabBarView(
-          children: tabViews,
+          children: buildTabBarView(),
           controller: _tabController,
         ),
       ),
@@ -89,7 +85,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
     super.dispose();
   }
 
-  static List<Center> buildTabBarView(widget) {
+  List<Center> buildTabBarView() {
     List<Center> tabs = [
       Center(
           child: Curriculum(
@@ -100,7 +96,6 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
       ),
       Center(
           child: Settings(
-        changeTabsLength: (length) {},
         course: widget.course,
       ))
     ];
@@ -108,7 +103,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
     return tabs;
   }
 
-  static List<Container> buildTabs() {
+  List<Container> buildTabs() {
     List<Container> tabs = [
       Container(
         child: Tab(
@@ -133,6 +128,7 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
         height: 30,
       ),
     ];
+
     return tabs;
   }
 

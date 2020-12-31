@@ -74,13 +74,11 @@ class CourseView extends StatelessWidget {
                   body: Classes(
                     chapters: course.courseChapters,
                   ),
-                  floatingActionButton: ClassesFAB(),
                 ),
               ),
               Center(
                 child: Scaffold(
                   body: Resources(),
-                  floatingActionButton: ResourcesFAB(),
                 ),
               )
             ],

@@ -1,3 +1,4 @@
+import 'package:Apollo/browse_view.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:animations/animations.dart';
@@ -48,7 +49,7 @@ class CourseList extends StatelessWidget {
                   transitionType: ContainerTransitionType.fade,
                   transitionDuration: const Duration(milliseconds: 500),
                   openBuilder: (context, action) {
-                    return CourseView(
+                    return ImagePopupPage(
                       course: courses[index],
                     );
                   },
