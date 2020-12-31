@@ -32,9 +32,8 @@ class Institution extends StatelessWidget {
       body: ListView(
         children: [
           ListTile(
-            title: Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed porttitor turpis. Donec ornare dui lacus, vitae iaculis dolor ultrices nec. Sed ipsum ipsum, dapibus non gravida sed, aliquam quis eros. Cras eleifend eros consequat ultrices imperdiet. Nulla facilisi. Integer ac quam et leo dictum vehicula vitae sed dui. Etiam mollis turpis quis nibh hendrerit"),
-          ),
+              title: Text(
+                  "لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم.")),
           CourseList(title: "Recent"),
           CourseList(title: "PSUT"),
           CourseList(title: "HTU - PSUT"),
@@ -46,7 +45,7 @@ class Institution extends StatelessWidget {
         // backgroundColor: Color.red,
         child: Text("course"),
       ),
-      drawer: NavDrawer(),
+      // drawer: NavDrawer(),
     );
   }
 }

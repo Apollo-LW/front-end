@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "أبولو",
-          style: TextStyle(fontFamily: 'TheSansArabic-Bold'),
+          
         ),
         centerTitle: true,
       ),
@@ -25,9 +25,8 @@ class Home extends StatelessWidget {
         // color:Colors.amberAccent,
         // ),
         children: [
-          CourseList(title: "Recent"),
+          CourseList(title: "حديثا"),
           CourseList(title: "PSUT"),
-          CourseList(title: "HTU - PSUT"),
           CourseList(title: "Work"),
         ],
       ),

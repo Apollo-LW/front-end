@@ -9,6 +9,7 @@ import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:Apollo/views/login.dart';
 
 void main() => runApp(Align(
       alignment: Alignment.topRight,
@@ -30,6 +31,7 @@ void main() => runApp(Align(
           theme: ThemeData(
             primaryColor: AppColors.darkBlue,
             accentColor: AppColors.darkBlue,
+            fontFamily: 'TheSansArabic',
           ),
 
           // initialRoute: '/home',
@@ -39,7 +41,7 @@ void main() => runApp(Align(
           routes: {
             // '/': (context) => Loading(),
 
-            '/home': (context) => Home(),
+            '/home': (context) => Login(),
 
             '/chat': (context) => Chat(),
 

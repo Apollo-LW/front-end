@@ -2,6 +2,8 @@ import 'package:Apollo/components/background_container.dart';
 import 'package:Apollo/pages/browse/browse.dart';
 import 'package:Apollo/pages/chat/Chats.dart';
 import 'package:Apollo/pages/home/home.dart';
+import 'package:Apollo/views/login.dart';
+
 import 'package:flutter/material.dart';
 
 import 'bottom_navigation.dart';
@@ -30,7 +32,7 @@ class _BottomNavigationBarControllerState
     return BackgroundContainer(
       child: IndexedStack(
         index: currentIndex,
-        children: [Browse(), Home(), Chats()],
+        children: [Browse(), Login(), Chats()],
       ),
       bottomNavigationBar: BottomNavigation(
         setCurrentIndex: setCurrentIndex,

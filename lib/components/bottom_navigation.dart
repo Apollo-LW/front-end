@@ -17,8 +17,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
       height: 70,
       child: BottomNavigationBar(
         showSelectedLabels: true,
-        selectedLabelStyle:
-            TextStyle(fontFamily: "Gotham", fontWeight: FontWeight.w300),
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
         showUnselectedLabels: true,
         currentIndex: widget.currentIndex,
         type: BottomNavigationBarType.fixed,
