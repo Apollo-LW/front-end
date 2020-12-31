@@ -23,7 +23,7 @@ class ResourcesComponent extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: Text(
-                  "Resources",
+                  "المصادر",
                   style: TextStyle(fontSize: 20, color: AppColors.darkBlue),
                 ),
               ),

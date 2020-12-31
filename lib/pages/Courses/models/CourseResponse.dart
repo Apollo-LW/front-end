@@ -1,7 +1,7 @@
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
 
 class CourseResponse {
-  final bool isActive, isPublic;
+  bool isActive, isPublic;
   String courseId,
       courseName,
       courseDateOfCreation,

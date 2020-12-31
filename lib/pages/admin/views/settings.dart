@@ -1,12 +1,12 @@
 import 'package:Apollo/components/AppDropDown.dart';
 import 'package:Apollo/components/app_text_field.dart';
+import 'package:Apollo/data/category_info.dart';
 import 'package:Apollo/helper/form_validator.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';
-import 'file:///D:/Desktop/apollo/front-end/lib/data/category_info.dart';
 import 'package:Apollo/pages/admin/components/course_partner_text_field.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,8 +15,9 @@ import 'package:flutter/material.dart';
 class Settings extends StatefulWidget {
   final CourseResponse course;
   final String courseID;
+  final Function changeTabsLength;
 
-  const Settings({this.course, this.courseID});
+  const Settings({this.course, this.courseID, this.changeTabsLength});
 
   @override
   _SettingsState createState() => _SettingsState();
@@ -265,6 +266,19 @@ class _SettingsState extends State<Settings> {
 
   onSubmit() {
     if (_formKey.currentState.validate()) {
+      widget.course.courseName = titleTextEditingController.text;
+      widget.course.description = descriptionTextEditingController.text;
+      widget.course.category = category;
+      widget.course.courseOwners = getCoursePartners();
+      widget.course.imgUrl = imageTextEditingController.text;
+      widget.course.isActive = isActive;
+      widget.course.isPublic = isPublic;
+      if (isPublic)
+        widget.changeTabsLength(4);
+      else
+        widget.changeTabsLength(3);
+
+      setState(() {});
       //Todo: 1(part2)
       // //update course info
       // values are:

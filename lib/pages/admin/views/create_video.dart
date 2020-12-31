@@ -35,16 +35,18 @@ class _CreateVideoState extends State<CreateVideo> {
       urlTextEditingController.text =
           widget.chapter.items[widget.videoIndex].url;
 
-      widget.chapter.items[widget.videoIndex].resources.forEach((element) {
-        resourceTextFields.add(ResourceTextField());
-      });
+      if (widget.chapter.items[widget.videoIndex].resources != null) {
+        widget.chapter.items[widget.videoIndex].resources.forEach((element) {
+          resourceTextFields.add(ResourceTextField());
+        });
 
-      if (widget.chapter.items[widget.videoIndex].resources.length > 0) {
-        for (int i = 0; i < resourceTextFields.length; i++) {
-          resourceTextFields[i].resourceLinkController.text =
-              widget.chapter.items[widget.videoIndex].resources[i].link.url;
-          resourceTextFields[i].resourceTitleController.text =
-              widget.chapter.items[widget.videoIndex].resources[i].link.title;
+        if (widget.chapter.items[widget.videoIndex].resources.length > 0) {
+          for (int i = 0; i < resourceTextFields.length; i++) {
+            resourceTextFields[i].resourceLinkController.text =
+                widget.chapter.items[widget.videoIndex].resources[i].link.url;
+            resourceTextFields[i].resourceTitleController.text =
+                widget.chapter.items[widget.videoIndex].resources[i].link.title;
+          }
         }
       }
     } else {

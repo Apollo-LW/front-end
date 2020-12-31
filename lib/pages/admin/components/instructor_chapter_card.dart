@@ -157,10 +157,10 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                           Text(
                                             widget.chapter.items[index].title
                                                         .length >
-                                                    30
+                                                    25
                                                 ? widget.chapter.items[index]
                                                         .title
-                                                        .ssubstring(0, 30) +
+                                                        .substring(0, 25) +
                                                     ".."
                                                 : widget
                                                     .chapter.items[index].title,
