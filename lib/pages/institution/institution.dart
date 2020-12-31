@@ -154,44 +154,7 @@ class DialogsExample extends StatelessWidget {
           child: const Text('Date Range Picker Dialog'),
         ),
         ////// Bottom Sheet Dialog.
-        RaisedButton(
-          color: Colors.orange,
-          onPressed: () {
-            // Or: showModalBottomSheet(), with model bottom sheet, clicking
-            // anywhere will dismiss the bottom sheet.
-            showBottomSheet<String>(
-              context: context,
-              builder: (BuildContext context) => Container(
-                decoration: const BoxDecoration(
-                  border: Border(top: BorderSide(color: Colors.black12)),
-                ),
-                child: ListView(
-                  shrinkWrap: true,
-                  primary: false,
-                  children: <Widget>[
-                    const ListTile(
-                      dense: true,
-                      title: Text('This is a bottom sheet'),
-                    ),
-                    const ListTile(
-                      dense: true,
-                      title: Text('Click OK to dismiss'),
-                    ),
-                    ButtonBar(
-                      children: <Widget>[
-                        FlatButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: const Text('OK'),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-          child: const Text('Bottom Sheet'),
-        ),
+       
       ]
           .map(
             (Widget button) => Container(

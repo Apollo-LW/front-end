@@ -90,44 +90,38 @@ class InstitutionFAB extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (true) {
-      return FloatingActionButton(
-        // backgroundColor:,
-        elevation: 0,
-        child: SpeedDial(
-          marginRight: 10,
-          // marginRight: 3,
-
-          // overlayColor: Colors.white,
-          overlayOpacity: .4,
-
-          // elevation: 5,
-          tooltip: "edit",
-          // backgroundColor: Colors.amber,
-          animatedIcon: AnimatedIcons.menu_close,
-          animatedIconTheme: IconThemeData(size: 22.0),
-          // child: Icon(Icons.add),
-          onOpen: () => print('OPENING DIAL'),
-          onClose: () => print('DIAL CLOSED'),
-          visible: true,
-          curve: Curves.bounceIn,
-          children: [
-            SpeedDialChild(
-              child: Icon(Icons.edit, color: Colors.white),
-              backgroundColor: Colors.lightBlue[800],
-              onTap: () {},
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.reorder, color: Colors.white),
-              backgroundColor: Colors.lightBlue[800],
-              onTap: () {},
-            ),
-            SpeedDialChild(
-              child: Icon(Icons.add, color: Colors.white),
-              backgroundColor: Colors.lightBlue[800],
-              onTap: () {},
-            ),
-          ],
-        ),
+      return SpeedDial(
+        marginRight: 50,
+        overlayOpacity: .0,
+        tooltip: "edit",
+        animatedIcon: AnimatedIcons.menu_close,
+        animatedIconTheme: IconThemeData(size: 22.0),
+        onOpen: () => print('OPENING DIAL'),
+        onClose: () => print('DIAL CLOSED'),
+        visible: true,
+        curve: Curves.bounceIn,
+        children: [
+          SpeedDialChild(
+            child: Icon(Icons.create_new_folder, color: Colors.white),
+            backgroundColor: Colors.lightBlue[800],
+            onTap: () {},
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.brush, color: Colors.white),
+            backgroundColor: Colors.lightBlue[800],
+            onTap: () {},
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.edit, color: Colors.white),
+            backgroundColor: Colors.lightBlue[800],
+            onTap: () {},
+          ),
+          SpeedDialChild(
+            child: Icon(Icons.security, color: Colors.white),
+            backgroundColor: Colors.lightBlue[800],
+            onTap: () {},
+          ),
+        ],
       );
     } else {
       return Container();
