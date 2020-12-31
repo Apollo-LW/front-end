@@ -11,6 +11,7 @@ import 'package:Apollo/pages/Courses/resources.dart';
 import 'package:Apollo/pages/Courses/courseList.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class Institution extends StatefulWidget {
   @override
@@ -75,12 +76,61 @@ class _InstitutionState extends State<Institution> {
         },
         itemCount: listCourses.length,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        // backgroundColor: Color.red,
-        child: Text("course"),
-      ),
+      floatingActionButton: InstitutionFAB(),
       // drawer: NavDrawer(),
     );
+  }
+}
+
+class InstitutionFAB extends StatelessWidget {
+  const InstitutionFAB({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (true) {
+      return FloatingActionButton(
+        // backgroundColor:,
+        elevation: 0,
+        child: SpeedDial(
+          marginRight: 10,
+          // marginRight: 3,
+
+          // overlayColor: Colors.white,
+          overlayOpacity: .4,
+
+          // elevation: 5,
+          tooltip: "edit",
+          // backgroundColor: Colors.amber,
+          animatedIcon: AnimatedIcons.menu_close,
+          animatedIconTheme: IconThemeData(size: 22.0),
+          // child: Icon(Icons.add),
+          onOpen: () => print('OPENING DIAL'),
+          onClose: () => print('DIAL CLOSED'),
+          visible: true,
+          curve: Curves.bounceIn,
+          children: [
+            SpeedDialChild(
+              child: Icon(Icons.edit, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.reorder, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.add, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 }

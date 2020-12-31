@@ -44,6 +44,7 @@ class CourseList extends StatelessWidget {
                   closedElevation: 0,
                   openElevation: 0,
                   closedColor: Colors.transparent,
+                  
                   transitionType: ContainerTransitionType.fade,
                   transitionDuration: const Duration(milliseconds: 500),
                   openBuilder: (context, action) {

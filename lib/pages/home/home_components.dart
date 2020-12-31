@@ -45,13 +45,12 @@ class CourseCard extends StatelessWidget {
                         ),
                         if (!enrolled)
                           Tooltip(
-                            message: "Enroll",
+                            message: "النضمام",
                             child: FlatButton(
                               child: Icon(Icons.add),
                               onPressed: () {
                                 Scaffold.of(context).showSnackBar(SnackBar(
-                                  content:
-                                      Text("You enrolled at the course! 🎉"),
+                                  content: Text("لقد تم ضمك للمساق بنجاح! 🎉"),
                                   behavior: SnackBarBehavior.floating,
                                 ));
                               },

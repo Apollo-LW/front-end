@@ -5,6 +5,7 @@ import 'package:Apollo/pages/Courses/views/classes.dart';
 import 'package:Apollo/pages/chat/chat.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 
 class CourseView extends StatelessWidget {
   final CourseResponse course;
@@ -69,17 +70,131 @@ class CourseView extends StatelessWidget {
             children: [
               Center(child: Chat()),
               Center(
-                  child: Classes(
-                chapters: course.courseChapters,
-              )),
+                child: Scaffold(
+                  body: Classes(
+                    chapters: course.courseChapters,
+                  ),
+                  floatingActionButton: ClassesFAB(),
+                ),
+              ),
               Center(
-                child: Resources(),
+                child: Scaffold(
+                  body: Resources(),
+                  floatingActionButton: ResourcesFAB(),
+                ),
               )
             ],
           ),
         ),
       ),
+
       // drawer: NavDrawer(),
     );
+  }
+}
+
+class ClassesFAB extends StatelessWidget {
+  const ClassesFAB({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (true) {
+      return FloatingActionButton(
+        // backgroundColor:,
+        elevation: 0,
+        // mini: true,
+        child: SpeedDial(
+          marginRight: 10,
+          // marginBottom: 3,
+          // overlayColor: Colors.white,
+          overlayOpacity: .4,
+
+          // elevation: 5,
+          tooltip: "edit",
+          // backgroundColor: Colors.amber,
+          animatedIcon: AnimatedIcons.menu_close,
+          animatedIconTheme: IconThemeData(size: 22.0),
+          // child: Icon(Icons.add),
+          onOpen: () => print('OPENING DIAL'),
+          onClose: () => print('DIAL CLOSED'),
+          visible: true,
+          curve: Curves.bounceIn,
+          children: [
+            SpeedDialChild(
+              child: Icon(Icons.edit, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.reorder, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.add, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Container();
+    }
+  }
+}
+
+class ResourcesFAB extends StatelessWidget {
+  const ResourcesFAB({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    if (true) {
+      return FloatingActionButton(
+        // backgroundColor:,
+        elevation: 0,
+        child: SpeedDial(
+          marginRight: 10,
+          // marginRight: 3,
+
+          // overlayColor: Colors.white,
+          overlayOpacity: .4,
+
+          // elevation: 5,
+          tooltip: "edit",
+          // backgroundColor: Colors.amber,
+          animatedIcon: AnimatedIcons.menu_close,
+          animatedIconTheme: IconThemeData(size: 22.0),
+          // child: Icon(Icons.add),
+          onOpen: () => print('OPENING DIAL'),
+          onClose: () => print('DIAL CLOSED'),
+          visible: true,
+          curve: Curves.bounceIn,
+          children: [
+            SpeedDialChild(
+              child: Icon(Icons.edit, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.reorder, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+            SpeedDialChild(
+              child: Icon(Icons.add, color: Colors.white),
+              backgroundColor: Colors.lightBlue[800],
+              onTap: () {},
+            ),
+          ],
+        ),
+      );
+    } else {
+      return Container();
+    }
   }
 }
