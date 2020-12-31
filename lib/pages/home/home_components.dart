@@ -5,8 +5,9 @@ import 'package:Apollo/pages/Courses/Course.dart';
 
 class CourseCard extends StatelessWidget {
   final CourseResponse course;
+  final bool isTeacher;
   bool enrolled = false;
-  CourseCard({@required this.course});
+  CourseCard({@required this.course, this.isTeacher = false});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ class CourseCard extends StatelessWidget {
                             aspectRatio: 3,
                           ),
                         ),
-                        if (!enrolled)
+                        if (!enrolled && !isTeacher)
                           Tooltip(
                             message: "النضمام",
                             child: FlatButton(

@@ -6,7 +6,7 @@ import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';
-import 'package:Apollo/pages/admin/components/category_info.dart';
+import 'file:///D:/Desktop/apollo/front-end/lib/data/category_info.dart';
 import 'package:Apollo/pages/admin/components/course_partner_text_field.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/cupertino.dart';

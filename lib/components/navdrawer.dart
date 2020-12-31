@@ -1,5 +1,6 @@
 import 'package:Apollo/pages/admin/onboarding/step.dart';
 import 'package:Apollo/pages/admin/onboarding/step_1.dart';
+import 'package:Apollo/pages/my_courses.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -140,17 +141,14 @@ class NavDrawer extends StatelessWidget {
             ]),
         Divider(),
         ListTile(
-          title: Text("Published Courses"),
+          title: Text("كورساتي"),
           leading: const Icon(Icons.public),
           onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: Text("Unpublished Courses"),
-          leading: const Icon(Icons.public_off),
-          onTap: () {
-            Navigator.pop(context);
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyCourses(),
+                ));
           },
         ),
         Divider(),

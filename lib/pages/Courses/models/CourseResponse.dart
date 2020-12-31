@@ -15,8 +15,8 @@ class CourseResponse {
   CourseResponse({
     this.courseId,
     this.courseName,
-    this.isActive,
-    this.isPublic,
+    this.isActive = false,
+    this.isPublic = false,
     this.courseChapters,
     this.courseOwners,
     this.courseMembers,
