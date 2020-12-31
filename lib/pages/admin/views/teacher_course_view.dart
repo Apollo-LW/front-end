@@ -10,7 +10,8 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 class TeacherCourseView extends StatefulWidget {
   final CourseResponse course;
-  TeacherCourseView({@required this.course});
+  final String courseId;
+  TeacherCourseView({@required this.course, this.courseId});
 
   @override
   _TeacherCourseViewState createState() => _TeacherCourseViewState();
@@ -23,6 +24,8 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
 
   @override
   void initState() {
+    //todo: 3
+    //fetch course info from widget.id
     super.initState();
     _tabController = new TabController(length: buildTabs().length, vsync: this);
   }
@@ -178,9 +181,12 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
                         ),
                         onPressed: () {
                           setState(() {
-                            widget.course.courseChapters.add(Chapter(
-                              chapterName: chapterTextEditingController.text,
-                            ));
+                            //todo:4 add chapter to course
+
+                            //previous code
+                            //   widget.course.courseChapters.add(Chapter(
+                            //     chapterName: chapterTextEditingController.text,
+                            //   ));
                           });
                           Navigator.pop(context);
                         }),
