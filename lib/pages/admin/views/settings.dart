@@ -32,6 +32,8 @@ class _SettingsState extends State<Settings> {
   bool isPublic = false;
   bool isActive = false;
   String category = "";
+  final _formKey = GlobalKey<FormState>();
+  List<String> categories = [];
 
   List<AppTextField> coursePartnerTextFields = [
     AppTextField(
@@ -51,6 +53,9 @@ class _SettingsState extends State<Settings> {
     isPublic = widget.course.isPublic;
     isActive = widget.course.isActive;
     category = widget.course.category;
+
+    categories = CategoryInfo.categories;
+    categories.removeAt(0);
     super.initState();
   }
 
@@ -63,16 +68,24 @@ class _SettingsState extends State<Settings> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            AppTextField(
-              label: "عنوان الدورة",
-              prefixIcon: Icon(Icons.school),
-              validator: FormValidators.presenceValidator,
-              controller: titleTextEditingController,
+            Form(
+              child: Column(
+                children: [
+                  AppTextField(
+                    label: "عنوان الدورة",
+                    prefixIcon: Icon(Icons.school),
+                    validator: FormValidators.presenceValidator,
+                    controller: titleTextEditingController,
+                  ),
+                ],
+              ),
+              key: _formKey,
             ),
+
             AppDropdown<String>(
               placeholder: "Meditation level",
               value: category,
-              options: CategoryInfo.categories,
+              options: categories,
               onChanged: (String val) {
                 setState(() {
                   category = val;
@@ -250,16 +263,18 @@ class _SettingsState extends State<Settings> {
   }
 
   onSubmit() {
-    //Todo: 1(part2)
-    // //update course info
-    // values are:
-    // titleTextEditingController.text; //course title
-    // descriptionTextEditingController.text; //course description
-    // category; //category
-    // List<String> coursePartners = getCoursePartners(); //course partners
-    //imgUrl: imageTextEditingController.text
-    // isPublic;
-    // isActive;
+    if (_formKey.currentState.validate()) {
+      //Todo: 1(part2)
+      // //update course info
+      // values are:
+      // titleTextEditingController.text; //course title
+      // descriptionTextEditingController.text; //course description
+      // category; //category
+      // List<String> coursePartners = getCoursePartners(); //course partners
+      //imgUrl: imageTextEditingController.text
+      // isPublic;
+      // isActive;
+    }
     setState(() {});
   }
 }
