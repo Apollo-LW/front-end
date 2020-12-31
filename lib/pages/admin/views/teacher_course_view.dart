@@ -1,6 +1,7 @@
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/admin/views/curriculum.dart';
+import 'package:Apollo/pages/admin/views/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/chat/chat.dart';
@@ -88,7 +89,10 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
       Center(
         child: Resources(),
       ),
-      Center(child: Chat())
+      Center(
+          child: Settings(
+        course: widget.course,
+      ))
     ];
 
     if (widget.course.isActive) {
