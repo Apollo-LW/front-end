@@ -21,11 +21,13 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
   TextEditingController chapterTextEditingController = TextEditingController();
-
+  CourseResponse course;
   @override
   void initState() {
     //todo: 3
-    //fetch course info from widget.id
+    //fetch course info from widget.id and use it instead of widget.course in the code below
+    //for ex. course= fetchCuorseFunction(widget.id)
+
     super.initState();
     _tabController = new TabController(length: buildTabs().length, vsync: this);
   }
@@ -182,11 +184,14 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
                         onPressed: () {
                           setState(() {
                             //todo:4 add chapter to course
+                            //where chapter is Chapter(chapterName: chapterTextEditingController.text)
+                            //and course has the the id (widget.id)
 
-                            //previous code
+                            //previous code=============
                             widget.course.courseChapters.add(Chapter(
                               chapterName: chapterTextEditingController.text,
                             ));
+                            //=======================
                           });
                           Navigator.pop(context);
                         }),

@@ -172,8 +172,10 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                               onPressed: () {
                                                 deleteItem(index);
 
+                                                //previous code=====
                                                 widget.chapter.items
                                                     .removeAt(index);
+                                                //=====================
                                                 if (widget
                                                     .chapter.items.isEmpty)
                                                   showDivider = false;
@@ -339,7 +341,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
 
   deleteItem(index) {
     //todo:5
-    //delete the following item: widget.chapter.items.removeAt(index);
+    //delete the following item from chapter: widget.chapter.items.removeAt(index);
     //(delete item at index from chapter)
   }
 }
