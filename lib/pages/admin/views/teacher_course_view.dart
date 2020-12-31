@@ -184,9 +184,9 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
                             //todo:4 add chapter to course
 
                             //previous code
-                            //   widget.course.courseChapters.add(Chapter(
-                            //     chapterName: chapterTextEditingController.text,
-                            //   ));
+                            widget.course.courseChapters.add(Chapter(
+                              chapterName: chapterTextEditingController.text,
+                            ));
                           });
                           Navigator.pop(context);
                         }),

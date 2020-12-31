@@ -1,12 +1,12 @@
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/Course.dart';
 
 class CourseCard extends StatelessWidget {
+  final CourseResponse course;
   bool enrolled = false;
-
-  String description =
-      "لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم.";
+  CourseCard({@required this.course});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +24,6 @@ class CourseCard extends StatelessWidget {
               // clipBehavior: Clip.hardEdge,
               elevation: 1,
               child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, '/course');
-                },
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -69,7 +66,7 @@ class CourseCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "مقدمة لعلوم الحاسوب",
+                              course.courseName,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
@@ -78,13 +75,15 @@ class CourseCard extends StatelessWidget {
                             SizedBox(
                               height: 5,
                             ),
-                            Text(description.substring(
-                                    0,
-                                    description.length > 180
-                                        ? 180
-                                        : description.length) +
-                                "...", style: TextStyle(fontSize: 12),
-                                ),
+                            Text(
+                              course.description.substring(
+                                      0,
+                                      course.description.length > 110
+                                          ? 110
+                                          : course.description.length) +
+                                  "...",
+                              style: TextStyle(fontSize: 12),
+                            ),
                           ],
                         ),
                       ),

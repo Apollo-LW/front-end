@@ -1,5 +1,6 @@
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/question.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
@@ -10,6 +11,9 @@ import 'package:flutter/material.dart';
 import '../components/chapter_card.dart';
 
 class Classes extends StatelessWidget {
+  final List<Chapter> chapters;
+  Classes({this.chapters});
+
   static Resource resource1 = Resource(
       itemType: "text",
       text:
@@ -26,7 +30,7 @@ class Classes extends StatelessWidget {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed efficitur leo lacus, a iaculis magna mollis eget. Phasellus molestie congue mauris sed auctor. Proin commodo ante quis tellus aliquet, quis consequat nulla rutrum. Nam sed erat non felis consequat blandit vitae et est. Sed sed odio vitae tortor elementum semper. In id viverra tortor, a ultricies ante. Pellentesque convallis mauris in nisl laoreet elementum vitae sed odio. Vestibulum consequat purus quis lacus vehicula, ut ultrices magna ullamcorper. Vestibulum nisi ipsum, condimentum lobortis nibh vitae, malesuada mollis nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer pharetra, nisl eu lobortis tincidunt, risus ante euismod massa, vel consectetur nunc neque venenatis nibh. Proin convallis condimentum blandit. Praesent sagittis elit eget eros laoreet facilisis. Pellentesque auctor tempor nisl nec lacinia.",
       itemNumber: 3,
       resources: [resource2, resource2, resource2]);
-  Chapter chapter1 = Chapter(chapterName: "Chapter 1- intro", items: [
+  static Chapter chapter1 = Chapter(chapterName: "Chapter 1- intro", items: [
     Video(
         title: "Intro To hiuhiuh",
         resources: [resource2, resource2, resource2],
@@ -52,14 +56,21 @@ class Classes extends StatelessWidget {
       itemNumber: 4,
       numberOfQuestions: 20,
       questions: [question1, question2, question1, question2]);
+  static CourseResponse course1=        CourseResponse(
+  courseName: "Asdf",
+  courseId: "asdf",
+  category: "sdf",
+  description:
+  "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم . من المفترض أن نفرق بين هذه الحالات بكل سهولة ومرونة. في ذاك الوقت عندما تكون قدرتنا علي الاختيار غير مقيدة بشرط وعندما لا نجد ما يمنعنا أن نفعل الأفضل فها نحن نرحب بالسرور والسعادة ونتجنب كل ما يبعث إلينا الألم. في بعض الأحيان ونظراً للالتزامات التي يفرضها علينا الواجب والعمل سنتنازل غالباً ونرفض الشعور بالسرور ونقبل ما يجلبه إلينا الأسى. الإنسان الحكيم عليه أن يمسك زمام الأمور ويختار إما أن يرفض مصادر السعادة من أجل ما هو أكثر أهمية أو يتحمل الألم من أجل ألا يتحمل ما هو أسوأ. </p>",
+  courseChapters: [Classes.chapter1]);
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        // ChapterCard(chapter: chapter1),
-        // ChapterCard(chapter: chapter1),
-      ],
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return ChapterCard(chapter: chapters[index]);
+      },
+      itemCount: chapters.length,
     );
   }
 }
