@@ -42,9 +42,10 @@ class CourseList extends StatelessWidget {
               itemBuilder: (context, index) {
                 return OpenContainer(
                   closedElevation: 0,
+                  openElevation: 0,
                   closedColor: Colors.transparent,
-                  transitionType: ContainerTransitionType.fadeThrough,
-                  transitionDuration: const Duration(milliseconds: 700),
+                  transitionType: ContainerTransitionType.fade,
+                  transitionDuration: const Duration(milliseconds: 500),
                   openBuilder: (context, action) {
                     return CourseView(
                       course: courses[index],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:Apollo/views/login.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -221,8 +222,18 @@ class Profile extends StatelessWidget {
                 )),
             Align(
               child: RaisedButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
                 child: Text("تسجيل خروج"),
-                onPressed: () {},
+                onPressed: () {
+                  //  Navigator.pop(context);
+                  Navigator.popUntil(context, (route) => false);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
+                },
               ),
             )
           ],

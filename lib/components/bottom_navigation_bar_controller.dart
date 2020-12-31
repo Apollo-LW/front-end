@@ -32,7 +32,7 @@ class _BottomNavigationBarControllerState
     return BackgroundContainer(
       child: IndexedStack(
         index: currentIndex,
-        children: [Browse(), Login(), Chats()],
+        children: [Browse(), Home(), Chats()],
       ),
       bottomNavigationBar: BottomNavigation(
         setCurrentIndex: setCurrentIndex,

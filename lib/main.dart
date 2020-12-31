@@ -34,12 +34,12 @@ void main() => runApp(Align(
 
           // initialRoute: '/home',
 
-          home: BottomNavigationBarController(),
+          home: Login(),
 
           routes: {
             // '/': (context) => Loading(),
 
-            '/home': (context) => Login(),
+            '/home': (context) => Home(),
 
             '/chat': (context) => Chat(),
 
