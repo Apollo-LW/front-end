@@ -7,7 +7,8 @@ class CourseCard extends StatelessWidget {
   final CourseResponse course;
   final bool isTeacher;
   bool enrolled = false;
-  CourseCard({@required this.course, this.isTeacher = false});
+  CourseCard(
+      {@required this.course, this.isTeacher = false, this.enrolled = false});
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class CourseCard extends StatelessWidget {
                         ),
                         if (!enrolled && !isTeacher)
                           Tooltip(
-                            message: "النضمام",
+                            message: "الانضمام",
                             child: FlatButton(
                               child: Icon(Icons.add),
                               onPressed: () {

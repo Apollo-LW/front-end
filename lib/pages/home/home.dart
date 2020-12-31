@@ -3,6 +3,7 @@ import 'package:Apollo/data/course_related_data.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/views/classes.dart';
 import 'package:Apollo/theme/AppColors.dart';
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/home/home_components.dart';
@@ -16,24 +17,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<CourseResponse> courses = [];
-  List<List<CourseResponse>> listCourses = [
-    [
-      CourseResponse(
-          courseName: "Asdf",
-          courseId: "asdf",
-          category: "sdf",
-          description:
-              "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم . من المفترض أن نفرق بين هذه الحالات بكل سهولة ومرونة. في ذاك الوقت عندما تكون قدرتنا علي الاختيار غير مقيدة بشرط وعندما لا نجد ما يمنعنا أن نفعل الأفضل فها نحن نرحب بالسرور والسعادة ونتجنب كل ما يبعث إلينا الألم. في بعض الأحيان ونظراً للالتزامات التي يفرضها علينا الواجب والعمل سنتنازل غالباً ونرفض الشعور بالسرور ونقبل ما يجلبه إلينا الأسى. الإنسان الحكيم عليه أن يمسك زمام الأمور ويختار إما أن يرفض مصادر السعادة من أجل ما هو أكثر أهمية أو يتحمل الألم من أجل ألا يتحمل ما هو أسوأ. </p>",
-          courseChapters: [Data.chapter1]),
-      CourseResponse(
-          courseName: "Asdf",
-          courseId: "asdf",
-          category: "sdf",
-          description: "Asdf adsf",
-          courseChapters: [Data.chapter1])
-    ]
-  ];
+  List<CourseResponse> courses = [Data.course6, Data.course4, Data.course5];
+  // List<List<CourseResponse>> listCourses = [
+  //   [
+  //     CourseResponse(
+  //         courseName: "Asdf",
+  //         courseId: "asdf",
+  //         category: "sdf",
+  //         description:
+  //             "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم . من المفترض أن نفرق بين هذه الحالات بكل سهولة ومرونة. في ذاك الوقت عندما تكون قدرتنا علي الاختيار غير مقيدة بشرط وعندما لا نجد ما يمنعنا أن نفعل الأفضل فها نحن نرحب بالسرور والسعادة ونتجنب كل ما يبعث إلينا الألم. في بعض الأحيان ونظراً للالتزامات التي يفرضها علينا الواجب والعمل سنتنازل غالباً ونرفض الشعور بالسرور ونقبل ما يجلبه إلينا الأسى. الإنسان الحكيم عليه أن يمسك زمام الأمور ويختار إما أن يرفض مصادر السعادة من أجل ما هو أكثر أهمية أو يتحمل الألم من أجل ألا يتحمل ما هو أسوأ. </p>",
+  //         courseChapters: [Data.chapter1]),
+  //     CourseResponse(
+  //         courseName: "Asdf",
+  //         courseId: "asdf",
+  //         category: "sdf",
+  //         description: "Asdf adsf",
+  //         courseChapters: [Data.chapter1])
+  //   ]
+  // ];
 
   @override
   void initState() {
@@ -55,19 +56,46 @@ class _HomeState extends State<Home> {
         ),
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.builder(
-          // margin: EdgeInsets.symmetric(vertical: 20.0),
-          // height: 300.0,
-          // decoration: BoxDecoration(
-          // color:Colors.amberAccent,
-          // ),
-          itemBuilder: (context, index) {
-            return CourseList(
-              courses: listCourses[index],
-            );
-          },
-          itemCount: listCourses.length,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 8.0),
+                child: Text("مساقاتي"),
+              ),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: ClampingScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return OpenContainer(
+                    closedElevation: 0,
+                    openElevation: 0,
+                    closedColor: Colors.transparent,
+                    transitionType: ContainerTransitionType.fade,
+                    transitionDuration: const Duration(milliseconds: 500),
+                    openBuilder: (context, action) {
+                      return CourseView(
+                        course: courses[index],
+                      );
+                    },
+                    closedBuilder: (context, action) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: CourseCard(
+                          course: courses[index],
+                          enrolled: true,
+                        ),
+                      );
+                    },
+                  );
+                },
+                itemCount: courses.length,
+              ),
+            ],
+          ),
         ),
       ),
       drawer: NavDrawer(),

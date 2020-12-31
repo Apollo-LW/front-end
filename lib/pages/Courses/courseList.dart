@@ -6,14 +6,15 @@ import 'package:Apollo/pages/home/home_components.dart';
 
 class CourseList extends StatelessWidget {
   final List<CourseResponse> courses;
+  final bool isEnrolled;
   String title;
-  CourseList({@required this.courses, this.title});
+  CourseList({@required this.courses, this.title, this.isEnrolled = false});
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 6),
         Row(
           children: [
             SizedBox(width: 40),
@@ -44,7 +45,6 @@ class CourseList extends StatelessWidget {
                   closedElevation: 0,
                   openElevation: 0,
                   closedColor: Colors.transparent,
-                  
                   transitionType: ContainerTransitionType.fade,
                   transitionDuration: const Duration(milliseconds: 500),
                   openBuilder: (context, action) {
@@ -53,7 +53,10 @@ class CourseList extends StatelessWidget {
                     );
                   },
                   closedBuilder: (context, action) {
-                    return CourseCard(course: courses[index]);
+                    return CourseCard(
+                      course: courses[index],
+                      enrolled: isEnrolled,
+                    );
                   },
                 );
               },

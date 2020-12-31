@@ -6,6 +6,8 @@ class CategoryInfo {
     "علم الروبوتات",
     "الفيزياء",
     "الرياضيات",
+    "الشبكات",
+    "اللغات"
   ];
 
   static List<DropdownMenuItem<String>> buildDropdownMenuItems() {

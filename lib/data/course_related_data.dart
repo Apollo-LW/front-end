@@ -51,10 +51,68 @@ class Data {
       numberOfQuestions: 20,
       questions: [question1, question2, question1, question2]);
   static CourseResponse course1 = CourseResponse(
-      courseName: "Asdf",
+      courseName: "مقدمة في الشبكات",
       courseId: "asdf",
-      category: "الفيزياء",
-      description:
-          "علي الجانب الآخر نشجب ونستنكر هؤلاء الرجال المفتونون بنشوة اللحظة الهائمون في رغباتهم فلا يدركون ما يعقبها من الألم والأسي المحتم، واللوم كذلك يشمل هؤلاء الذين أخفقوا في واجباتهم نتيجة لضعف إرادتهم فيتساوي مع هؤلاء الذين يتجنبون وينأون عن تحمل الكدح والألم . من المفترض أن نفرق بين هذه الحالات بكل سهولة ومرونة. في ذاك الوقت عندما تكون قدرتنا علي الاختيار غير مقيدة بشرط وعندما لا نجد ما يمنعنا أن نفعل الأفضل فها نحن نرحب بالسرور والسعادة ونتجنب كل ما يبعث إلينا الألم. في بعض الأحيان ونظراً للالتزامات التي يفرضها علينا الواجب والعمل سنتنازل غالباً ونرفض الشعور بالسرور ونقبل ما يجلبه إلينا الأسى. الإنسان الحكيم عليه أن يمسك زمام الأمور ويختار إما أن يرفض مصادر السعادة من أجل ما هو أكثر أهمية أو يتحمل الألم من أجل ألا يتحمل ما هو أسوأ. </p>",
+      imgUrl:
+          "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80",
+      category: "الشبكات",
+      description: "يشتمل التدريب في مساق مقدِمة إلى عالم الشبكات أيضاً على كيفية تصميم وتعديل الشبكات الصغيرة، وكيفية الربط بين جهازين بطريقة (Peer to Peer)، وكيفية تصميم شبكة سلكية باستخدام موزع (Switch)، وكيفية عمل (Cross Cable)، وتغير (IP) للأجهزة، وكيفية التوصيل بين جهازين والتأكد من جاهزية الشبكة، وكيفية عمل وإنشاء ملف مشترك بين جهازين وتبادل الملفات من خلال الشبكة.",
       courseChapters: [Data.chapter1]);
+  static CourseResponse course8 = CourseResponse(
+      courseName: "مقدمة في  أمن الشبكات",
+      courseId: "asdf",
+      imgUrl:
+          "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+      category: "الشبكات",
+      description: "ت هي مجموعة من الإجراءات التي يمكن خلالها توفير الحماية القصوى للمعلومات والبيانات في الشبكات من كافة المخاطر التي تهددها، وذلك من خلال توفير الأدوات والوسائل اللازم توفيرها لحماية المعلومات من المخاطر الداخلية أو الخارجية.",
+      courseChapters: [Data.chapter1]);
+
+  static CourseResponse course2 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "مقدمة في اللغة الفرنسية",
+      imgUrl:
+          "https://images.unsplash.com/photo-1485199433301-8b7102e86995?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
+      courseChapters: [Data.chapter1],
+      description:
+          " هي إحدى اللغات الرومانسية تحتل المركز الخامس من حيث اللغات الأكثر تحدثاً في العالم، حيث يتكلم بها نحو 80 مليون شخص في جميع أنحاء العالم كلغة رسمية أساسية، وحوالي 190 مليون شخص كلغة رسمية ثانية، وحوالي 274 مليون شخص في جميع أنحاء العالم.");
+
+  static CourseResponse course3 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "تعلم اللغة الألمانية",
+      imgUrl:
+          "https://images.unsplash.com/photo-1449452198679-05c7fd30f416?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      courseChapters: [Data.chapter1],
+      description:
+          "هي إحدى اللغات الجرمانيَّة الغربيَّة؛ والتي هي بدورها إحدى فروع العائلة اللغويَّة الهندوأوروبيَّة. وتنتشرُ بصورةٍ رئيسيَّةٍ في أوروبَّا الوسطى فهي لغة رسميَّة لجمهوريَّة أَلمانيا الاتّحاديَّة، وجمهوريَّة النَّمسا، وإمارة ليختنشتاين، وإِحدى اللغات الوطنيَّة الأَربعة لسويسرا");
+  static CourseResponse course4 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "تعرف على منصة درسك",
+      imgUrl:
+          "https://images.unsplash.com/photo-1465433045946-ba6506ce5a59?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      courseChapters: [Data.chapter1],
+      description:
+          "تعرف على كيفيك استخدام منصة درسك للتعلم الالكتروني لتتمكن من مواكبة تقدم الحصة الصفية عن بعد.");
+
+  static CourseResponse course5 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "كيفية استخدام openEMIS للمعلمين",
+      imgUrl:
+          "https://www.openemis.org/wp-content/uploads/2018/04/OpenEMIS_Logo_Size512x199.png",
+      courseChapters: [Data.chapter1],
+      description:
+          "تعلم كيفية ادخال علامات الطلاب الى نظام البيانات التابع لوزارة التربية والتعليم");
+
+  static CourseResponse course6 = CourseResponse(
+      category: "اللغات",
+      courseId: "asdf",
+      courseName: "تكتيكات للفوز في الشطرنج",
+      imgUrl:
+          "https://images.unsplash.com/photo-1602968407815-5963b28c66af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
+      courseChapters: [Data.chapter1],
+      description:
+          "في بداية اللعبة يتم وضع لوح الشطرنج بحيث يقع المربع ذو اللون الأبيض (أو اللون الفاتح) في الجانب الأيمن السفلي للاعب، ثم يتم ترتيب قطع الشطرنج بنفس الطريقة في كل مرة كالآتي: تعبئة الصف الثاني بالبيادق (الجنود)، وتوزّع القلاع في الزوايا، ثم تُوضع الأحصنة إلى جوارهم، يتبعهم الفيل، وأخيراً الملكة التي تُوضع دائماً في المربع المطابق للونها (الملكة السوداء على المربع الأسود، والملكة البيضاء على المربع الأبيض)، ويوضع الملك على المربع الآخر بجانبها.");
 }
