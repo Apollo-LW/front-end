@@ -1,5 +1,5 @@
-import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
+import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/question.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';

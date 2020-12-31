@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/ChapterCreate.dart';
 import 'package:Apollo/pages/Courses/models/CourseCreate.dart';
 import 'package:Apollo/pages/Courses/models/CourseEnrollment.dart';
@@ -9,6 +8,7 @@ import 'package:Apollo/pages/Courses/models/CourseEnrollmentRequest.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/Lecture.dart';
 import 'package:Apollo/pages/Courses/models/ShareCourse.dart';
+import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:dio/dio.dart';
 
 class CourseService {

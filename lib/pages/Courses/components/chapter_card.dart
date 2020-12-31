@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/Chapter.dart';
+import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:Apollo/pages/Courses/views/article_page.dart';
 import 'package:Apollo/pages/Courses/views/start_quiz_page.dart';
 import 'package:Apollo/pages/Courses/views/video_page.dart';

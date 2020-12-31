@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/Chapter.dart';
+import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:Apollo/pages/Courses/service/CourseService.dart';
 import 'package:rxdart/rxdart.dart';
 
