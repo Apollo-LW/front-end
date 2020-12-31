@@ -1,4 +1,5 @@
 import 'package:Apollo/components/navdrawer.dart';
+import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/resources.dart';
 import 'package:Apollo/pages/Courses/views/classes.dart';
 import 'package:Apollo/pages/chat/chat.dart';
@@ -6,6 +7,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CourseView extends StatelessWidget {
+  final CourseResponse course;
+
+  const CourseView({this.course});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +26,7 @@ class CourseView extends StatelessWidget {
 //  collapsedHeight: 30.0001,
 
 //                        pinned:true,
-                title: Text("Intro to computer science"),
+                title: Text(course.courseName),
                 automaticallyImplyLeading: true,
                 bottom: TabBar(
                   tabs: [
@@ -63,7 +68,10 @@ class CourseView extends StatelessWidget {
           body: TabBarView(
             children: [
               Center(child: Chat()),
-              Center(child: Classes()),
+              Center(
+                  child: Classes(
+                chapters: course.courseChapters,
+              )),
               Center(
                 child: Resources(),
               )

@@ -1,9 +1,7 @@
 import 'package:Apollo/pages/Courses/components/chapter_card.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
-import 'package:Apollo/pages/Courses/models/course.dart';
 import 'package:Apollo/pages/Courses/models/question.dart';
 
-import 'package:Apollo/pages/Courses/models/chapter.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
