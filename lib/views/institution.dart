@@ -1,17 +1,14 @@
-import 'package:Apollo/components/navdrawer.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/views/classes.dart';
 
 import 'package:Apollo/theme/AppColors.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:Apollo/pages/home/home_components.dart';
-import 'package:Apollo/pages/Courses/Course.dart';
-import 'package:Apollo/pages/Courses/resources.dart';
+import 'package:animations/animations.dart';
+
 import 'package:Apollo/pages/Courses/courseList.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:Apollo/views/institution_admin.dart';
 
 class Institution extends StatefulWidget {
   @override
@@ -54,15 +51,20 @@ class _InstitutionState extends State<Institution> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        leadingWidth: 35,
         title: FittedBox(
           child: Row(
             children: [
-              CircleAvatar(),
+              CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.network(
+                  "https://upload.wikimedia.org/wikipedia/en/1/14/Princess_Sumaya_University_for_Technology_logo.png",
+                  fit: BoxFit.fill,
+                ),
+              ),
               SizedBox(
                 width: 10,
               ),
-              Text("Princess Sumaya Universty for Technology")
+              Text("جامعة الأميرة سمية للتكنلوجيا"),
             ],
           ),
         ),
@@ -119,7 +121,12 @@ class InstitutionFAB extends StatelessWidget {
           SpeedDialChild(
             child: Icon(Icons.security, color: Colors.white),
             backgroundColor: Colors.lightBlue[800],
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InstitutionAdmin()),
+              );
+            },
           ),
         ],
       );
