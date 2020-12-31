@@ -23,6 +23,14 @@ class Curriculum extends StatefulWidget {
 
 class _CurriculumState extends State<Curriculum> {
   @override
+  void initState() {
+//todo:12
+    //fetch course
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return widget.course.courseChapters != null
         ? ListView.builder(

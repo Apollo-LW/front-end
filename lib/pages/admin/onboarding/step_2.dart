@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:Apollo/components/AppDropDown.dart';
-import 'package:Apollo/pages/admin/components/category_info.dart';
+import 'file:///D:/Desktop/apollo/front-end/lib/data/category_info.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
 import 'package:Apollo/pages/admin/onboarding/step_3.dart';
