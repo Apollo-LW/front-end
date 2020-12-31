@@ -35,8 +35,10 @@ class CourseCard extends StatelessWidget {
                             child: FittedBox(
                               fit: BoxFit.fitWidth,
                               alignment: Alignment.topCenter,
-                              child: Image.asset(
-                                "assets/images/apollo.png",
+                              child: Image.network(
+                                course.imgUrl != null && course.imgUrl != ""
+                                    ? course.imgUrl
+                                    : "https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80",
                                 fit: BoxFit.cover,
                               ),
                             ),

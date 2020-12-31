@@ -14,8 +14,9 @@ import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
   final CourseResponse course;
+  final String courseID;
 
-  const Settings({this.course});
+  const Settings({this.course, this.courseID});
 
   @override
   _SettingsState createState() => _SettingsState();
@@ -23,10 +24,11 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   String selectedCategory = CategoryInfo.categories[0];
-
+  CourseResponse course = CourseResponse();
   TextEditingController titleTextEditingController = TextEditingController();
   TextEditingController descriptionTextEditingController =
       TextEditingController();
+  TextEditingController imageTextEditingController = TextEditingController();
   bool isPublic = false;
   bool isActive = false;
   String category = "";
@@ -39,6 +41,12 @@ class _SettingsState extends State<Settings> {
   ];
   @override
   void initState() {
+    //todo:1(part1)
+    //fetch course by widget.id
+    //for ex. course= await fetchCourseById()
+    //replace all "widget.course" with course
+    titleTextEditingController.text = widget.course.courseName;
+    imageTextEditingController.text = widget.course.imgUrl;
     descriptionTextEditingController.text = widget.course.description;
     isPublic = widget.course.isPublic;
     isActive = widget.course.isActive;
@@ -58,8 +66,8 @@ class _SettingsState extends State<Settings> {
             AppTextField(
               label: "عنوان الدورة",
               prefixIcon: Icon(Icons.school),
-              initialValue: widget.course.courseName,
               validator: FormValidators.presenceValidator,
+              controller: titleTextEditingController,
             ),
             AppDropdown<String>(
               placeholder: "Meditation level",
@@ -70,6 +78,11 @@ class _SettingsState extends State<Settings> {
                   category = val;
                 });
               },
+            ),
+            AppTextField(
+              label: "صورة الدورة",
+              prefixIcon: Icon(Icons.image),
+              controller: imageTextEditingController,
             ),
             ListView.builder(
               padding: EdgeInsets.zero,
@@ -237,14 +250,16 @@ class _SettingsState extends State<Settings> {
   }
 
   onSubmit() {
-    //Todo: 1
+    //Todo: 1(part2)
     // //update course info
     // values are:
     // titleTextEditingController.text; //course title
     // descriptionTextEditingController.text; //course description
     // category; //category
     // List<String> coursePartners = getCoursePartners(); //course partners
+    //imgUrl: imageTextEditingController.text
     // isPublic;
     // isActive;
+    setState(() {});
   }
 }

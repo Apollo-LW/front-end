@@ -7,22 +7,25 @@ class CourseResponse {
       courseDateOfCreation,
       error,
       category,
-      description;
+      description,
+      imgUrl;
   final List<dynamic> courseOwners, courseMembers;
   final List<Chapter> courseChapters;
 
-  CourseResponse(
-      {this.courseId,
-      this.courseName,
-      this.isActive,
-      this.isPublic,
-      this.courseChapters,
-      this.courseOwners,
-      this.courseMembers,
-      this.courseDateOfCreation,
-      this.error,
-      this.category,
-      this.description});
+  CourseResponse({
+    this.courseId,
+    this.courseName,
+    this.isActive,
+    this.isPublic,
+    this.courseChapters,
+    this.courseOwners,
+    this.courseMembers,
+    this.courseDateOfCreation,
+    this.error,
+    this.category,
+    this.description,
+    this.imgUrl,
+  });
 
   factory CourseResponse.fromJson(Map<String, dynamic> json) {
     return CourseResponse(

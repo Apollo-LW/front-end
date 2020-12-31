@@ -9,6 +9,7 @@ import 'package:Apollo/pages/admin/views/create_quiz.dart';
 import 'package:Apollo/pages/admin/views/create_video.dart';
 import 'package:Apollo/theme/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class InstructorChapterCard extends StatefulWidget {
   final Chapter chapter;
@@ -22,7 +23,9 @@ class InstructorChapterCard extends StatefulWidget {
 }
 
 class _InstructorChapterCardState extends State<InstructorChapterCard> {
+  TextEditingController chapterNameController = TextEditingController();
   bool showDivider = true;
+
   @override
   Widget build(BuildContext context) {
     if (widget.chapter.items != null) if (!widget.chapter.items.isEmpty)
@@ -35,8 +38,48 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(bottom: 8.0, left: 16, right: 16),
-            child: Text(widget.chapter.chapterName),
+            padding: const EdgeInsets.only(bottom: 8.0, left: 24, right: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.chapter.chapterName),
+                Row(
+                  children: [
+                    Container(
+                      width: 20,
+                      child: IconButton(
+                        onPressed: () {
+                          editCourseName();
+                        },
+                        tooltip: "تعديل اسم الوحدة",
+                        icon: Icon(Icons.edit_outlined,
+                            color: AppColors.darkBlue),
+                        padding: EdgeInsets.zero,
+                        splashRadius: 20,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Container(
+                      width: 20,
+                      child: IconButton(
+                        tooltip: "حذف الوحدة",
+                        splashRadius: 20,
+                        padding: EdgeInsets.zero,
+                        icon: Icon(
+                          Icons.delete_outline,
+                          color: Colors.redAccent,
+                        ),
+                        onPressed: () {
+                          deleteChapter();
+                        },
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
           widget.chapter.items != null
               ? Card(
@@ -147,8 +190,9 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                       Row(
                                         children: [
                                           Container(
-                                            width: 20,
+                                            width: 30,
                                             child: IconButton(
+                                              tooltip: "تعديل الدرس",
                                               onPressed: () {
                                                 onPressEdit(index);
                                               },
@@ -162,9 +206,11 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                             ),
                                           ),
                                           Container(
-                                            width: 25,
+                                            width: 30,
                                             child: IconButton(
+                                              tooltip: "حذف الدرس",
                                               splashRadius: 20,
+                                              padding: EdgeInsets.zero,
                                               icon: Icon(
                                                 Icons.delete_outline,
                                                 color: Colors.redAccent,
@@ -183,14 +229,19 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                               },
                                             ),
                                           ),
-                                          IconButton(
-                                            splashRadius: 20,
-                                            onPressed: () {
-                                              previewLecture(context, index);
-                                            },
-                                            icon: Icon(
-                                              Icons.preview_outlined,
-                                              color: Colors.lightGreen,
+                                          Container(
+                                            width: 25,
+                                            child: IconButton(
+                                              tooltip: "معاينة الدرس",
+                                              padding: EdgeInsets.zero,
+                                              splashRadius: 20,
+                                              onPressed: () {
+                                                previewLecture(context, index);
+                                              },
+                                              icon: Icon(
+                                                Icons.preview_outlined,
+                                                color: Colors.lightGreen,
+                                              ),
                                             ),
                                           )
                                         ],
@@ -339,9 +390,82 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
     ));
   }
 
+  buildDialog() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        chapterNameController.text = widget.chapter.chapterName;
+        return AlertDialog(
+          insetPadding: EdgeInsets.symmetric(horizontal: 20),
+          title: Center(child: Text("إنشاء وحدة جديدة")),
+          content: Container(
+            width: MediaQuery.of(context).size.width,
+            height: 150.0,
+            child: ListView(
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(
+                      labelText: "اسم الوحدة", border: OutlineInputBorder()),
+                  controller: chapterNameController,
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    DialogButton(
+                        width: MediaQuery.of(context).size.width / 3,
+                        color: Colors.grey.shade500,
+                        child: Text(
+                          "تعديل اسم الوحدة",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                          ),
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            onSubmitChapterNameEdit();
+                          });
+                          Navigator.pop(context);
+                        }),
+                    DialogButton(
+                        width: MediaQuery.of(context).size.width / 3,
+                        child: Text(
+                          "إلغاء",
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                        onPressed: () => Navigator.pop(context)),
+                  ],
+                )
+              ],
+            ),
+          ),
+          actions: <Widget>[],
+        );
+      },
+    );
+  }
+
+  onSubmitChapterNameEdit() {
+    //todo:12
+    //update chapterName with:
+    //chapterNameController.text
+  }
+  editCourseName() {
+    buildDialog();
+  }
+
   deleteItem(index) {
     //todo:5
     //delete the following item from chapter: widget.chapter.items.removeAt(index);
     //(delete item at index from chapter)
+  }
+
+  deleteChapter() {
+    //todo 13:
+    //delete chapter from database
+    setState(() {});
   }
 }
