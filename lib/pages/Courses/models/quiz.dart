@@ -9,7 +9,7 @@ class Quiz {
   int score = 0;
   int quizDurationInSeconds = 30;
 
-  //ui shit
+  //ui
   String subtitle = "Quiz";
   IconData icon = Icons.question_answer_outlined;
   Quiz(

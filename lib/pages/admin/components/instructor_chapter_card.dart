@@ -428,8 +428,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                           ),
                         ),
                         onPressed: () {
-                          widget.chapter.chapterName =
-                              chapterNameController.text;
+                          // widget.chapter.chapterName = chapterNameController.text;
 
                           setState(() {
                             Navigator.pop(context);

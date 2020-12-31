@@ -7,7 +7,7 @@ class Article {
   String text;
   List<Resource> resources;
 
-  //ui shit
+  //ui
   String subtitle = "Article";
   IconData icon = Icons.picture_as_pdf_outlined;
   Article(

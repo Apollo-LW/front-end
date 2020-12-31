@@ -9,7 +9,7 @@ class Video {
   String length;
   List<Resource> resources;
 
-  //ui shit
+  //ui
   String subtitle = "Video";
   IconData icon = Icons.video_collection_outlined;
   Video(
