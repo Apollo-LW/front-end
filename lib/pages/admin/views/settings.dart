@@ -4,7 +4,6 @@ import 'package:Apollo/helper/form_validator.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
-import 'package:Apollo/pages/Courses/models/coursee.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';
 import 'package:Apollo/pages/admin/components/category_info.dart';
