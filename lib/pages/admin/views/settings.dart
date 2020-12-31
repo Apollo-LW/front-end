@@ -3,7 +3,7 @@ import 'package:Apollo/components/app_text_field.dart';
 import 'package:Apollo/helper/form_validator.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/coursee.dart';
 import 'package:Apollo/pages/Courses/models/link.dart';
 import 'package:Apollo/pages/Courses/models/resource.dart';

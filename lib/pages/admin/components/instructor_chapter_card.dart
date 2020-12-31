@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/views/article_page.dart';
 import 'package:Apollo/pages/Courses/views/question_page.dart';
 import 'package:Apollo/pages/Courses/views/start_quiz_page.dart';
@@ -172,8 +172,8 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                                 deleteItem(index);
 
                                                 //previous code
-                                                widget.chapter.items
-                                                    .removeAt(index);
+                                                // widget.chapter.items
+                                                //     .removeAt(index);
                                                 if (widget
                                                     .chapter.items.isEmpty)
                                                   showDivider = false;

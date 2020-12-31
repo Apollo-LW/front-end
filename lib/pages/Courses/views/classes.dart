@@ -57,8 +57,8 @@ class Classes extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        ChapterCard(chapter: chapter1),
-        ChapterCard(chapter: chapter1),
+        // ChapterCard(chapter: chapter1),
+        // ChapterCard(chapter: chapter1),
       ],
     );
   }

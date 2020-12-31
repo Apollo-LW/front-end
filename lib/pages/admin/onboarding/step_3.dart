@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:Apollo/pages/Courses/models/chapter.dart';
+import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/Courses/models/article.dart';
 import 'package:Apollo/pages/Courses/models/quiz.dart';
@@ -131,13 +131,13 @@ class _Step3State extends State<Step3> {
     //2- push to teacherCourseView and send id to it
 
     //previous code
-    Navigator.pushReplacement(context, MaterialPageRoute(
-      builder: (context) {
-        return TeacherCourseView(
-          course: creationOfCourseObject(),
-        );
-      },
-    ));
+    // Navigator.pushReplacement(context, MaterialPageRoute(
+    //   builder: (context) {
+    //     return TeacherCourseView(
+    //       course: creationOfCourseObject(),
+    //     );
+    //   },
+    // ));
   }
 
   CourseResponse creationOfCourseObject() {
