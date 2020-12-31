@@ -22,16 +22,16 @@ class Chats extends StatelessWidget {
             return [
               SliverAppBar(
                 pinned: true,
-                title: Text("Chats"),
+                title: Text("الرسائل"),
                 automaticallyImplyLeading: true,
                 bottom: TabBar(
                   tabs: [
                     Container(
-                      child: Tab(text: "Groups"),
+                      child: Tab(text: "المجموعات"),
                       height: 30,
                     ),
                     Container(
-                      child: Tab(text: "Direct"),
+                      child: Tab(text: "الرسائل الخاصة"),
                       height: 30,
                     ),
                   ],
@@ -91,7 +91,7 @@ class Chats extends StatelessWidget {
           ),
         ],
       ),
-      endDrawer: NavDrawer(),
+      drawer: NavDrawer(),
     );
   }
 }

@@ -6,7 +6,8 @@ class CourseCard extends StatelessWidget {
   bool enrolled = false;
 
   String description =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed porttitor turpis. Donec ornare dui lacus, vitae iaculis dolor ultrices nec. Sed ipsum ipsum, dapibus non gravida sed, aliquam quis eros. Cras eleifend eros consequat ultrices imperdiet. Nulla facilisi. Integer ac quam et leo dictum vehicula vitae sed dui. Etiam mollis turpis quis nibh hendrerit";
+      "لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم.";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -68,7 +69,7 @@ class CourseCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Intro to Computer Science",
+                              "مقدمة لعلوم الحاسوب",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18,
@@ -79,10 +80,11 @@ class CourseCard extends StatelessWidget {
                             ),
                             Text(description.substring(
                                     0,
-                                    description.length > 230
-                                        ? 230
+                                    description.length > 180
+                                        ? 180
                                         : description.length) +
-                                "..."),
+                                "...", style: TextStyle(fontSize: 12),
+                                ),
                           ],
                         ),
                       ),

@@ -80,17 +80,15 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: TheSansArabic-Bold
+    - family: TheSansArabic
       fonts:
-        - asset: fonts/TheSans Bold.otf
-    
-    - family: TheSansArabic-Plain
-      fonts:
-        - asset: fonts/TheSans Plain.ttf
-
-    - family: TheSansArabic-Light
-      fonts:
-        - asset: fonts/TheSansArabic Light.ttf
+        - asset: fonts/TheSansArabic-Light.ttf
+          weight: 300
+        - asset: fonts/TheSans-Plain.ttf
+          weight: 400
+        - asset: fonts/TheSans-Bold.otf
+          weight: 900
+       
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
