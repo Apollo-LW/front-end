@@ -32,11 +32,14 @@ class _MessageBoxState extends State<MessageBox> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(flex: 1, child: SizedBox()),
+            Expanded(flex: 1, child: CircleAvatar()),
+            SizedBox(
+              width: 5.0,
+            ),
             Expanded(
                 flex: 9,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   // mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Card(
@@ -45,13 +48,6 @@ class _MessageBoxState extends State<MessageBox> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                // Text(
-                                //   "Mohammad Rimawi",
-                                //   style: TextStyle(fontWeight: FontWeight.bold),
-                                // ),
-                                // SizedBox(
-                                //   height: 8,
-                                // ),
                                 SelectableText(widget.message.text),
                               ],
                             ))),
@@ -66,10 +62,9 @@ class _MessageBoxState extends State<MessageBox> {
                     ),
                   ],
                 )),
-            SizedBox(
-              width: 5.0,
-            ),
-            Expanded(flex: 1, child: CircleAvatar()),
+
+            //
+            Expanded(flex: 1, child: SizedBox()),
           ],
         ),
       );
@@ -78,16 +73,14 @@ class _MessageBoxState extends State<MessageBox> {
         padding: const EdgeInsets.all(15.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.end,
+
           children: [
-            Expanded(flex: 1, child: CircleAvatar()),
-            SizedBox(
-              width: 5.0,
-            ),
+            Expanded(flex: 1, child: SizedBox()),
             Expanded(
                 flex: 9,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  // mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Card(
                         child: Padding(
@@ -96,7 +89,7 @@ class _MessageBoxState extends State<MessageBox> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  "Mohammad Rimawi",
+                                  "محمد الريماوي",
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
@@ -116,7 +109,10 @@ class _MessageBoxState extends State<MessageBox> {
                     ),
                   ],
                 )),
-            Expanded(flex: 1, child: SizedBox()),
+            SizedBox(
+              width: 5.0,
+            ),
+            Expanded(flex: 1, child: CircleAvatar()),
           ],
         ),
       );
