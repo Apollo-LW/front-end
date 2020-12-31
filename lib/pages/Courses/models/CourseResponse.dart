@@ -1,4 +1,4 @@
-import 'package:Apollo/pages/Courses/models/Chapter.dart';
+import 'package:Apollo/pages/Courses/models/chapter.dart';
 
 class CourseResponse {
   final bool isActive, isPublic;
