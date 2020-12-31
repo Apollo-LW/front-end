@@ -12,12 +12,28 @@ class ChatRoomCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10, 4, 10, 4),
       child: ListTile(
-        title: Text("Mohammad Rimawi"),
-        subtitle: Text("Hello there!"),
+        title: Text("محمد الريماوي"),
+        subtitle: Text("مرحبا!"),
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Chat()),
+            MaterialPageRoute(
+              builder: (context) => Scaffold(
+                appBar: AppBar(
+                  leadingWidth: 35,
+                  title: Row(
+                    children: [
+                      CircleAvatar(),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text("محمد الريماوي")
+                    ],
+                  ),
+                ),
+                body: Chat(),
+              ),
+            ),
           );
         },
         leading: Badge(

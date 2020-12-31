@@ -56,169 +56,74 @@ class _ChatState extends State<Chat> {
   bool appBar = true;
   @override
   Widget build(BuildContext context) {
-    if (!appBar)
-      return Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-          child: ListView(
-            // controller: _scrollController,
-            reverse: true,
-            shrinkWrap: true,
-            // children: new UnmodifiableListView(_messages),
-            children: messages.reversed
-                .map((message) => MessageBox(message: message))
-                .toList(),
-          ),
-        ),
-
-        bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: Colors.blueAccent))),
-            child: Form(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 10, 0),
-                  child: Row(children: [
-                    Expanded(
-                        flex: 7,
-                        child: TextFormField(
-                            controller: messageBoxController,
-                            decoration: const InputDecoration(
-                              hintText: 'Enter your Message',
-                            ))),
-                    Expanded(
-                      flex: 1,
-                      child: FlatButton(
-                        onPressed: () {
-                          setState(() {
-                            messages.add(Message(
-                                text: messageBoxController.text,
-                                time: '13:00pm',
-                                userID: '124'));
-                            messageBoxController.text = "";
-                          });
-                        },
-                        child: Icon(Icons.send),
-                      ),
+    return Scaffold(
+      body: ListView(
+        reverse: true,
+        children: [
+          Container(
+              decoration: BoxDecoration(
+                  border: Border(top: BorderSide(color: Colors.blueAccent))),
+              child: Form(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(10, 0, 30, 0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            flex: 7,
+                            child: TextFormField(
+                                controller: messageBoxController,
+                                decoration: const InputDecoration(
+                                  hintText: 'Enter your Message',
+                                ))),
+                        Expanded(
+                          flex: 1,
+                          child: FlatButton(
+                            onPressed: () {
+                              setState(() {
+                                messages.add(Message(
+                                    text: messageBoxController.text,
+                                    time: '13:00pm',
+                                    userID: '124'));
+                                messageBoxController.text = "";
+                              });
+                            },
+                            child: Icon(Icons.send),
+                          ),
+                        ),
+                      ],
                     ),
-                  ]),
+                  ),
                 ),
-              ),
-              // child:
-              //       TextFormField(
-              //         decoration: const InputDecoration(
-              //           hintText: 'Enter your Message',
-              //           icon: Icon(Icons.send),
-              //         ),
+              )),
+          Expanded(child: ChatArea(messages: messages)),
+        ],
+      ),
+    );
+  }
+}
 
-              //       ),
-            )),
+class ChatArea extends StatelessWidget {
+  const ChatArea({
+    Key key,
+    @required this.messages,
+  }) : super(key: key);
 
-        // TextFormField(
+  final List<Message> messages;
 
-        //     validator: (value) {
-        //       if (value.isEmpty) {
-        //         return 'Please enter some text';
-        //       }
-        //       return null;
-        //     },
-        //   ),
-      );
-    else
-      return Scaffold(
-        appBar: AppBar(
-          leadingWidth: 35,
-          title: Row(
-            children: [
-              CircleAvatar(),
-              SizedBox(
-                width: 10,
-              ),
-              Text("Mohammad Rimawi")
-            ],
-          ),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-          child: ListView.builder(
-            shrinkWrap: true,
-            physics: ClampingScrollPhysics(),
-            reverse: true,
-            itemCount: messages.length,
-            itemBuilder: (context, index) {
-              return MessageBox(
-                  message: messages[(messages.length - 1) - index]);
-            },
-          ),
-          // child: ListView(
-          //   // controller: _scrollController,
-          //   reverse: true,
-          //   shrinkWrap: true,
-          //   // children: new UnmodifiableListView(_messages),
-          //   children: messages.reversed
-          //       .map((message) => MessageBox(message: message))
-          //       .toList(),
-          // ),
-        ),
-
-        bottomNavigationBar: Container(
-            decoration: BoxDecoration(
-                border: Border(top: BorderSide(color: Colors.blueAccent))),
-            child: Form(
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 0, 10, 0),
-                  child: Row(children: [
-                    Expanded(
-                        flex: 7,
-                        child: TextFormField(
-                            controller: messageBoxController,
-                            decoration: const InputDecoration(
-                              hintText: 'Enter your Message',
-                            ))),
-                    Expanded(
-                      flex: 1,
-                      child: FlatButton(
-                        onPressed: () {
-                          setState(() {
-                            messages.add(Message(
-                                text: messageBoxController.text,
-                                time: '13:00pm',
-                                userID: '124'));
-                            messageBoxController.text = "";
-                          });
-                          // build(context,);
-                          // Validate will return true if the form is valid, or false if
-                          // the form is invalid.
-                          // if (_formKey.currentState.validate()) {
-                          // Process data.
-                          // }
-                        },
-                        child: Icon(Icons.send),
-                      ),
-                    ),
-                  ]),
-                ),
-              ),
-              // child:
-              //       TextFormField(
-              //         decoration: const InputDecoration(
-              //           hintText: 'Enter your Message',
-              //           icon: Icon(Icons.send),
-              //         ),
-
-              //       ),
-            )),
-
-        // TextFormField(
-
-        //     validator: (value) {
-        //       if (value.isEmpty) {
-        //         return 'Please enter some text';
-        //       }
-        //       return null;
-        //     },
-        //   ),
-      );
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      child: ListView.builder(
+        shrinkWrap: true,
+        physics: ClampingScrollPhysics(),
+        reverse: true,
+        itemCount: messages.length,
+        itemBuilder: (context, index) {
+          return MessageBox(message: messages[(messages.length - 1) - index]);
+        },
+      ),
+    );
   }
 }
