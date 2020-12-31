@@ -26,7 +26,7 @@ class _MyCoursesState extends State<MyCourses> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("كورساتي"),
+          title: Text("دورتاتي"),
         ),
         body: Padding(
           padding: const EdgeInsets.all(24.0),

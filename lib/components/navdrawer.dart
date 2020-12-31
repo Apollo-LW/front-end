@@ -111,7 +111,7 @@ class NavDrawer extends StatelessWidget {
             leading: const Icon(Icons.business),
             children: [
               ListTile(
-                title: Text("Princess Sumaya Universty for Techonology"),
+                title: Text("جامعة الاميرة سمية للتكنولوجيا"),
                 leading: CircleAvatar(
                   backgroundColor: Colors.white,
                   child: Text('MA'),
@@ -125,7 +125,7 @@ class NavDrawer extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text("Work"),
+                title: Text("العمل"),
                 leading: CircleAvatar(
                   backgroundColor: Colors.white,
                   child: Text('MA'),
@@ -141,26 +141,6 @@ class NavDrawer extends StatelessWidget {
             ]),
         Divider(),
         ListTile(
-          title: Text("كورساتي"),
-          leading: const Icon(Icons.public),
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => MyCourses(),
-                ));
-          },
-        ),
-        Divider(),
-        ListTile(
-          title: Text("لوحة التحكم"),
-          leading: const Icon(Icons.security),
-          onTap: () {
-            Navigator.pop(context);
-          },
-        ),
-        Divider(),
-        ListTile(
           title: Text("إنشاء دورة جديدة"),
           leading: const Icon(Icons.school),
           onTap: () {
@@ -168,6 +148,17 @@ class NavDrawer extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => Step1(),
+                ));
+          },
+        ),
+        ListTile(
+          title: Text("دوراتي"),
+          leading: const Icon(Icons.public),
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MyCourses(),
                 ));
           },
         ),
