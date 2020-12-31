@@ -55,7 +55,8 @@ class _SettingsState extends State<Settings> {
     category = widget.course.category;
 
     categories = CategoryInfo.categories;
-    categories.removeAt(0);
+
+    if (CategoryInfo.categories.length == 6) categories.removeAt(0);
     super.initState();
   }
 

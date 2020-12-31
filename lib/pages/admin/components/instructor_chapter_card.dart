@@ -14,9 +14,10 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 class InstructorChapterCard extends StatefulWidget {
   final Chapter chapter;
   final Function addLecture;
+  final Function deleteChapter;
 
   const InstructorChapterCard(
-      {@required this.chapter, @required this.addLecture});
+      {@required this.chapter, @required this.addLecture, this.deleteChapter});
 
   @override
   _InstructorChapterCardState createState() => _InstructorChapterCardState();
@@ -72,7 +73,9 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                           color: Colors.redAccent,
                         ),
                         onPressed: () {
-                          deleteChapter();
+                          setState(() {
+                            widget.deleteChapter();
+                          });
                         },
                       ),
                     ),
@@ -425,10 +428,13 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                           ),
                         ),
                         onPressed: () {
+                          widget.chapter.chapterName =
+                              chapterNameController.text;
+
                           setState(() {
+                            Navigator.pop(context);
                             onSubmitChapterNameEdit();
                           });
-                          Navigator.pop(context);
                         }),
                     DialogButton(
                         width: MediaQuery.of(context).size.width / 3,
@@ -461,11 +467,5 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
     //todo:5
     //delete the following item from chapter: widget.chapter.items.removeAt(index);
     //(delete item at index from chapter)
-  }
-
-  deleteChapter() {
-    //todo 13:
-    //delete chapter from database
-    setState(() {});
   }
 }

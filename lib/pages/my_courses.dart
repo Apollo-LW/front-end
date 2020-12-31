@@ -13,7 +13,7 @@ class MyCourses extends StatefulWidget {
 }
 
 class _MyCoursesState extends State<MyCourses> {
-  List courses = [Data.course1];
+  List courses = [Data.course6];
   @override
   void initState() {
     // TODO:

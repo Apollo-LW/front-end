@@ -36,6 +36,11 @@ class _CurriculumState extends State<Curriculum> {
         ? ListView.builder(
             itemBuilder: (context, index) {
               return InstructorChapterCard(
+                deleteChapter: () {
+                  setState(() {
+                    widget.course.courseChapters.removeAt(index);
+                  });
+                },
                 chapter: widget.course.courseChapters[index],
                 addLecture: () {
                   Navigator.push(

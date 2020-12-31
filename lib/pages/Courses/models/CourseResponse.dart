@@ -2,15 +2,15 @@ import 'package:Apollo/pages/Courses/models/Chapter.dart';
 
 class CourseResponse {
   final bool isActive, isPublic;
-  final String courseId,
+  String courseId,
       courseName,
       courseDateOfCreation,
       error,
       category,
       description,
       imgUrl;
-  final List<dynamic> courseOwners, courseMembers;
-  final List<Chapter> courseChapters;
+  List<dynamic> courseOwners, courseMembers;
+  List<Chapter> courseChapters;
 
   CourseResponse({
     this.courseId,

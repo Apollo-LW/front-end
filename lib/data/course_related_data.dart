@@ -55,7 +55,7 @@ class Data {
       courseId: "asdf",
       imgUrl:
           "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=751&q=80",
-      category: "الشبكات",
+      category: "شبكات",
       description: "يشتمل التدريب في مساق مقدِمة إلى عالم الشبكات أيضاً على كيفية تصميم وتعديل الشبكات الصغيرة، وكيفية الربط بين جهازين بطريقة (Peer to Peer)، وكيفية تصميم شبكة سلكية باستخدام موزع (Switch)، وكيفية عمل (Cross Cable)، وتغير (IP) للأجهزة، وكيفية التوصيل بين جهازين والتأكد من جاهزية الشبكة، وكيفية عمل وإنشاء ملف مشترك بين جهازين وتبادل الملفات من خلال الشبكة.",
       courseChapters: [Data.chapter1]);
   static CourseResponse course8 = CourseResponse(

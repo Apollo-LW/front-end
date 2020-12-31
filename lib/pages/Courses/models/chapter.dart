@@ -1,7 +1,7 @@
 class Chapter {
   List items;
-  final String chapterId, chapterName, error;
-  final List<dynamic> chapterLectures, chapterResources;
+  String chapterId, chapterName, error;
+  List<dynamic> chapterLectures, chapterResources;
 
   Chapter(
       {this.chapterId,
