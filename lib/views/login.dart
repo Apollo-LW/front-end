@@ -1,3 +1,4 @@
+import 'package:Apollo/helper/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:Apollo/pages/home/home.dart';
@@ -5,6 +6,10 @@ import 'package:Apollo/components/bottom_navigation_bar_controller.dart';
 import 'package:Apollo/views/signup.dart';
 
 class Login extends StatelessWidget {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     if (1 == 2) {
@@ -21,38 +26,49 @@ class Login extends StatelessWidget {
                 // decoration: BoxDecoration(color: Colors.amber),
               ),
             ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextField(
-                // enabled: this._password != null && this._password.isNotEmpty,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                    const Radius.circular(12.0),
-                  )),
-                  suffixIcon: Icon(Icons.account_box),
-                  filled: true,
-                  labelText: 'البريد الاكتروني/ الرقم الوطني',
-                ),
-                // maxLength: 8,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextField(
-                // enabled: this._password != null && this._password.isNotEmpty,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                    const Radius.circular(12.0),
-                  )),
-                  hintStyle: TextStyle(),
-                  filled: true,
-                  labelText: 'كلمة المرور',
-                  suffixIcon: Icon(Icons.security),
-                ),
-                // maxLength: 8,
-                obscureText: true,
+            Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: TextFormField(
+                      controller: emailController,
+                      validator: FormValidators.emailValidator,
+                      // enabled: this._password != null && this._password.isNotEmpty,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                          const Radius.circular(12.0),
+                        )),
+                        suffixIcon: Icon(Icons.account_box),
+                        filled: true,
+                        labelText: 'البريد الاكتروني/ الرقم الوطني',
+                      ),
+                      // maxLength: 8,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    child: TextFormField(
+                      controller: passwordController,
+                      // enabled: this._password != null && this._password.isNotEmpty,
+                      validator: FormValidators.presenceValidator,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius: const BorderRadius.all(
+                          const Radius.circular(12.0),
+                        )),
+                        hintStyle: TextStyle(),
+                        filled: true,
+                        labelText: 'كلمة المرور',
+                        suffixIcon: Icon(Icons.security),
+                      ),
+                      // maxLength: 8,
+                      obscureText: true,
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
@@ -71,11 +87,7 @@ class Login extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => BottomNavigationBarController()),
-                  );
+                  onPressLogIn(context);
                 },
               ),
             ),
@@ -133,6 +145,22 @@ class Login extends StatelessWidget {
           ],
         ),
       );
+    }
+  }
+
+  onPressLogIn(context) {
+    if (_formKey.currentState.validate()) {
+      //Todo:10
+      //1-create user where
+      //email: emailController.text
+      //password: passwordController.text
+
+      //2-send to the following route:
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(
+      //       builder: (context) => BottomNavigationBarController()),
+      // );
     }
   }
 }
