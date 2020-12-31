@@ -1,6 +1,7 @@
 import 'package:Apollo/pages/Courses/models/Chapter.dart';
 import 'package:Apollo/pages/Courses/models/CourseResponse.dart';
 import 'package:Apollo/pages/admin/views/curriculum.dart';
+import 'package:Apollo/pages/admin/views/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:Apollo/pages/chat/chat.dart';
@@ -9,7 +10,8 @@ import 'package:rflutter_alert/rflutter_alert.dart';
 
 class TeacherCourseView extends StatefulWidget {
   final CourseResponse course;
-  TeacherCourseView({@required this.course});
+  final String courseId;
+  TeacherCourseView({@required this.course, this.courseId});
 
   @override
   _TeacherCourseViewState createState() => _TeacherCourseViewState();
@@ -22,6 +24,8 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
 
   @override
   void initState() {
+    //todo: 3
+    //fetch course info from widget.id
     super.initState();
     _tabController = new TabController(length: buildTabs().length, vsync: this);
   }
@@ -88,7 +92,10 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
       Center(
         child: Resources(),
       ),
-      Center(child: Chat())
+      Center(
+          child: Settings(
+        course: widget.course,
+      ))
     ];
 
     if (widget.course.isActive) {
@@ -174,9 +181,12 @@ class _TeacherCourseViewState extends State<TeacherCourseView>
                         ),
                         onPressed: () {
                           setState(() {
-                            widget.course.courseChapters.add(Chapter(
-                              chapterName: chapterTextEditingController.text,
-                            ));
+                            //todo:4 add chapter to course
+
+                            //previous code
+                            //   widget.course.courseChapters.add(Chapter(
+                            //     chapterName: chapterTextEditingController.text,
+                            //   ));
                           });
                           Navigator.pop(context);
                         }),

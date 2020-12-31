@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:Apollo/components/AppDropDown.dart';
+import 'package:Apollo/pages/admin/components/category_info.dart';
 import 'package:Apollo/pages/admin/components/icon_card.dart';
 import 'package:Apollo/pages/admin/components/not_institution_card.dart';
 import 'package:Apollo/pages/admin/onboarding/step_3.dart';
@@ -21,28 +23,7 @@ class Step2 extends StatefulWidget {
 
 class _Step2State extends State<Step2> {
   TextEditingController textEditingController = TextEditingController();
-  String selectedCategory = categories[0];
-
-  static List<String> categories = [
-    "اختار فئة",
-    "علم الروبوتات",
-    "الفيزياء",
-    "الرياضيات",
-  ];
-
-  List<DropdownMenuItem<String>> buildDropdownMenuItems() {
-    List<DropdownMenuItem<String>> items = List();
-
-    for (String category in categories) {
-      items.add(
-        DropdownMenuItem(
-          value: category,
-          child: Text(category),
-        ),
-      );
-    }
-    return items;
-  }
+  String selectedCategory = CategoryInfo.categories[0];
 
   @override
   Widget build(BuildContext context) {
@@ -105,19 +86,29 @@ class _Step2State extends State<Step2> {
                 ),
                 ButtonTheme(
                   alignedDropdown: true,
-                  child: DropdownButton(
-                    focusColor: AppColors.darkBlue,
-                    isExpanded: true,
-                    hint: Text("sdf"),
+                  child: AppDropdown<String>(
+                    placeholder: "Meditation level",
                     value: selectedCategory,
-                    items: buildDropdownMenuItems(),
-                    onChanged: (val) {
+                    options: CategoryInfo.categories,
+                    onChanged: (String val) {
                       setState(() {
                         selectedCategory = val;
                       });
-                      print(val);
                     },
                   ),
+                  // child: DropdownButton(
+                  //   focusColor: AppColors.darkBlue,
+                  //   isExpanded: true,
+                  //   hint: Text("sdf"),
+                  //   value: selectedCategory,
+                  //   items: CategoryInfo.buildDropdownMenuItems(),
+                  //   onChanged: (val) {
+                  //     setState(() {
+                  //       selectedCategory = val;
+                  //     });
+                  //     print(val);
+                  //   },
+                  // ),
                 ),
               ],
             ),
@@ -132,7 +123,7 @@ class _Step2State extends State<Step2> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-                    if (selectedCategory == categories[0]) {
+                    if (selectedCategory == CategoryInfo.categories[0]) {
                       Alert(
                         context: context,
                         title: "يجب عليك إختيار فئة.",

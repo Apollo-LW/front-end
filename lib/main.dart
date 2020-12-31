@@ -15,8 +15,6 @@ void main() => runApp(Align(
       alignment: Alignment.topRight,
       child: Directionality(
         textDirection: TextDirection.rtl, //
-        // set it to rtl
-
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [

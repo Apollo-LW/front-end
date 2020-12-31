@@ -110,16 +110,8 @@ class _Step3State extends State<Step3> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(
-                      builder: (context) {
-                        return TeacherCourseView(
-                          course: creationOfCourse(),
-                        );
-                      },
-                    ));
-                  },
-                  child: Text("التالي"),
+                  onPressed: onPressCreate,
+                  child: Text("إنشاء"),
                 ),
               ),
             )
@@ -129,7 +121,26 @@ class _Step3State extends State<Step3> {
     );
   }
 
-  CourseResponse creationOfCourse() {
+  onPressCreate() {
+    //todo: 2
+    //1- create course object
+    // courseName= widget.title
+//description= textEditingController.text
+    //       category= widget.category,
+    //  courseOwners= i guess supposed to be list of strings where firstOwner is logged in user
+    //2- push to teacherCourseView and send id to it
+
+    //previous code
+    // Navigator.pushReplacement(context, MaterialPageRoute(
+    //   builder: (context) {
+    //     return TeacherCourseView(
+    //       course: creationOfCourseObject(),
+    //     );
+    //   },
+    // ));
+  }
+
+  CourseResponse creationOfCourseObject() {
     var uuid = Uuid().v4;
     CourseResponse course = CourseResponse(
         courseName: widget.title,

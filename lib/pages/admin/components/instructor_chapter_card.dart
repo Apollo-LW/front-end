@@ -27,6 +27,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
   Widget build(BuildContext context) {
     if (widget.chapter.items != null) if (!widget.chapter.items.isEmpty)
       showDivider = true;
+
     return Padding(
       padding: const EdgeInsets.only(right: 16.0, left: 16, bottom: 32),
       child: Column(
@@ -149,44 +150,7 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                             width: 20,
                                             child: IconButton(
                                               onPressed: () {
-                                                Navigator.push(context,
-                                                    MaterialPageRoute(
-                                                  builder: (context) {
-                                                    return widget
-                                                                .chapter
-                                                                .items[index]
-                                                                .subtitle ==
-                                                            "Article"
-                                                        ? CreateArticle(
-                                                            chapter:
-                                                                widget.chapter,
-                                                            articleIndex: index,
-                                                            isEditPage: true,
-                                                          )
-                                                        : widget
-                                                                    .chapter
-                                                                    .items[
-                                                                        index]
-                                                                    .subtitle ==
-                                                                "Video"
-                                                            ? CreateVideo(
-                                                                chapter: widget
-                                                                    .chapter,
-                                                                videoIndex:
-                                                                    index,
-                                                                isEditPage:
-                                                                    true,
-                                                              )
-                                                            : CreateQuiz(
-                                                                chapter: widget
-                                                                    .chapter,
-                                                                articleIndex:
-                                                                    index,
-                                                                isEditPage:
-                                                                    true,
-                                                              );
-                                                  },
-                                                ));
+                                                onPressEdit(index);
                                               },
                                               icon: Container(
                                                 width: 20,
@@ -206,6 +170,8 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                                                 color: Colors.redAccent,
                                               ),
                                               onPressed: () {
+                                                deleteItem(index);
+
                                                 widget.chapter.items
                                                     .removeAt(index);
                                                 if (widget
@@ -345,5 +311,35 @@ class _InstructorChapterCardState extends State<InstructorChapterCard> {
                               video: widget.chapter.items[index],
                             )))
                 : print("hi");
+  }
+
+  onPressEdit(index) {
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) {
+        return widget.chapter.items[index].subtitle == "Article"
+            ? CreateArticle(
+                chapter: widget.chapter,
+                articleIndex: index,
+                isEditPage: true,
+              )
+            : widget.chapter.items[index].subtitle == "Video"
+                ? CreateVideo(
+                    chapter: widget.chapter,
+                    videoIndex: index,
+                    isEditPage: true,
+                  )
+                : CreateQuiz(
+                    chapter: widget.chapter,
+                    articleIndex: index,
+                    isEditPage: true,
+                  );
+      },
+    ));
+  }
+
+  deleteItem(index) {
+    //todo:5
+    //delete the following item: widget.chapter.items.removeAt(index);
+    //(delete item at index from chapter)
   }
 }

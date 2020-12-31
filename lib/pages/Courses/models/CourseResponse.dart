@@ -8,8 +8,8 @@ class CourseResponse {
       error,
       category,
       description;
-  List<dynamic> courseOwners, courseMembers;
-  List<Chapter> courseChapters;
+  final List<dynamic> courseOwners, courseMembers;
+  final List<Chapter> courseChapters;
 
   CourseResponse(
       {this.courseId,
