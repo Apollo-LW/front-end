@@ -34,7 +34,7 @@ void main() => runApp(Align(
 
           // initialRoute: '/home',
 
-          home: Login(),
+          home: BottomNavigationBarController(),
 
           routes: {
             // '/': (context) => Loading(),
